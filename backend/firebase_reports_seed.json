@@ -1,0 +1,172 @@
+{
+  "reports": {
+    "b3ededcc-a1ac-41db-be00-9e03085201af": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "MEDIUM"
+    },
+    "d1df1383-7370-48f5-a5aa-114e14c00db9": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "MEDIUM"
+    },
+    "2f0849b4-6f39-473a-b936-f5de40cc2398": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "MEDIUM"
+    },
+    "e84c7026-587d-46e2-8ff0-7764388ac816": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "HIGH"
+    },
+    "20c6d23a-7440-4086-aab3-d770339617ec": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "MEDIUM"
+    },
+    "656a9dcf-ccbe-4ff9-8f22-3b089c66d577": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "HIGH"
+    },
+    "edcbca10-1fdb-4847-accc-4e75fbdc29a5": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "MEDIUM"
+    },
+    "130ec081-3358-4da8-9f27-29bac9c2f40c": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "HIGH"
+    },
+    "13c61b0d-94fd-4b64-b113-40c8a12cceaf": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "HIGH"
+    },
+    "e600940b-33df-47a3-9766-cdc1c3b8eb6a": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "HIGH"
+    },
+    "89119b97-dff9-4f7a-a542-889d5d70c2af": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "HIGH"
+    },
+    "53f1ac21-f551-4ba5-b6f9-17ce6387252f": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "MEDIUM"
+    },
+    "d5b3511f-2882-4aff-855d-d79c17d3cd2e": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "MEDIUM"
+    },
+    "becf2837-2b2b-4593-b56f-97a2d73289c1": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "HIGH"
+    },
+    "069e8ea8-3a64-4223-8042-4b389d63e5b5": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "MEDIUM"
+    },
+    "6d3addaa-a1ef-4227-81a4-f4ea239a2e2a": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "HIGH"
+    },
+    "a2e96347-f882-41bf-ba48-15907bc662d5": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "MEDIUM"
+    },
+    "b251009c-9060-4bef-b952-7ac1607ebf7d": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "HIGH"
+    },
+    "ac526937-3168-4eb2-9392-42530c2a6ea5": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "HIGH"
+    },
+    "cd7d7ad6-28fc-4018-8582-eb712b30476e": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "MEDIUM"
+    },
+    "9e5ce77f-35f3-4a2c-a8e6-668e79cf43fc": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "MEDIUM"
+    },
+    "256611cd-5fb0-47db-9a18-94add1b29fe9": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "HIGH"
+    },
+    "78959573-9367-4cc5-981d-40ccc4db294f": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "MEDIUM"
+    },
+    "4d5c1ad2-d3c1-46ae-9417-5c022672d3c4": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "HIGH"
+    },
+    "e5f203c0-86ed-476a-a8a2-9e861fc60049": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "MEDIUM"
+    },
+    "e85f5aa0-a7b8-45aa-b1b6-9bfe79bb3620": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "HIGH"
+    },
+    "66123f9f-1a7a-4386-a25f-418820df4113": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "MEDIUM"
+    },
+    "18239059-15b7-4050-9499-71bb98a05503": {
+      "stillVotes": 0,
+      "fixedVotes": 0,
+      "status": "IN_PROGRESS",
+      "priority": "MEDIUM"
+    }
+  }
+}

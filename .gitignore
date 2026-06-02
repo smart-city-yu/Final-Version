@@ -1,0 +1,32 @@
+# ── Secrets & environment ────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ── Java / Maven (backend) ───────────────────────────────────────────────────
+backend/backend/target/
+backend/backend/.mvn/wrapper/maven-wrapper.jar
+
+# ── Python / FastAPI (smart-city-ai) ─────────────────────────────────────────
+smart-city-ai/venv/
+smart-city-ai/.venv/
+smart-city-ai/__pycache__/
+smart-city-ai/**/__pycache__/
+**/*.pyc
+
+# ── Flutter (smart-city-frontend) ────────────────────────────────────────────
+smart-city-frontend/build/
+smart-city-frontend/.dart_tool/
+smart-city-frontend/.pub-cache/
+smart-city-frontend/.flutter-plugins-dependencies
+
+# ── IDEs ─────────────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# ── OS ───────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db

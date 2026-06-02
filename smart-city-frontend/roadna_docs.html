@@ -1,0 +1,2075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>RoadNa — Frontend Code Reference</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#2E7D32;--green-dark:#1B5E20;--green-light:#4CAF50;--green-soft:#EDF7EE;
+  --red:#DC2626;--orange:#EA580C;--blue:#1D4ED8;
+  --bg:#F6F8F6;--white:#fff;--border:#E5E7EB;
+  --text:#1A1A2E;--grey:#6B7280;--light:#9CA3AF;
+  --sidebar-w:270px;--code-font:'JetBrains Mono',monospace;
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);display:flex;min-height:100vh}
+
+/* ── SIDEBAR ── */
+#sidebar{
+  width:var(--sidebar-w);min-width:var(--sidebar-w);
+  background:var(--green-dark);color:#fff;
+  position:fixed;top:0;left:0;height:100vh;overflow-y:auto;z-index:100;
+  padding-bottom:40px;
+}
+#sidebar::-webkit-scrollbar{width:4px}
+#sidebar::-webkit-scrollbar-thumb{background:#4CAF50;border-radius:4px}
+.sb-logo{padding:22px 20px 16px;border-bottom:1px solid rgba(255,255,255,0.1)}
+.sb-logo h1{font-size:20px;font-weight:800;letter-spacing:-0.5px}
+.sb-logo p{font-size:11px;color:#a5d6a7;margin-top:3px}
+.sb-section{padding:12px 12px 4px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#81c784;opacity:.8}
+.sb-link{
+  display:block;padding:8px 16px;font-size:13px;color:#c8e6c9;
+  text-decoration:none;border-radius:8px;margin:1px 8px;
+  transition:background .15s,color .15s;cursor:pointer;
+}
+.sb-link:hover,.sb-link.active{background:rgba(255,255,255,0.12);color:#fff}
+.sb-link .icon{margin-right:8px;font-size:14px}
+
+/* ── MAIN ── */
+#main{margin-left:var(--sidebar-w);flex:1;padding:32px 40px;max-width:1100px}
+
+/* ── SECTION ── */
+.section{margin-bottom:72px;scroll-margin-top:24px}
+.section-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:28px;padding-bottom:16px;border-bottom:2px solid var(--border)}
+.section-icon{font-size:32px;line-height:1}
+.section-header h2{font-size:26px;font-weight:800;letter-spacing:-0.5px}
+.section-header p{font-size:14px;color:var(--grey);margin-top:4px;line-height:1.5}
+.filepath{
+  display:inline-flex;align-items:center;gap:6px;
+  background:#1a1a2e;color:#81c784;
+  font-family:var(--code-font);font-size:12px;
+  padding:6px 12px;border-radius:8px;margin:8px 0 20px;
+}
+.filepath::before{content:'📁';font-family:inherit}
+
+/* ── ELEMENT CARDS ── */
+.element-card{
+  background:var(--white);border:1px solid var(--border);
+  border-left:4px solid var(--green);border-radius:12px;
+  margin-bottom:20px;overflow:hidden;
+}
+.element-card.blue{border-left-color:var(--blue)}
+.element-card.orange{border-left-color:var(--orange)}
+.element-card.red{border-left-color:var(--red)}
+.element-card.purple{border-left-color:#7c3aed}
+.element-card.grey{border-left-color:var(--grey)}
+.el-header{
+  display:flex;align-items:center;gap:10px;
+  padding:14px 18px;background:var(--bg);border-bottom:1px solid var(--border);
+}
+.el-header .num{
+  background:var(--green);color:#fff;
+  font-size:11px;font-weight:700;
+  width:22px;height:22px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.element-card.blue .el-header .num{background:var(--blue)}
+.element-card.orange .el-header .num{background:var(--orange)}
+.element-card.red .el-header .num{background:var(--red)}
+.element-card.purple .el-header .num{background:#7c3aed}
+.element-card.grey .el-header .num{background:var(--grey)}
+.el-header strong{font-size:14px;font-weight:700}
+.el-header .line-badge{
+  margin-left:auto;background:#f0fdf4;color:var(--green);
+  font-family:var(--code-font);font-size:11px;
+  padding:3px 8px;border-radius:6px;border:1px solid #bbf7d0;white-space:nowrap;
+}
+.element-card.blue .line-badge{background:#eff6ff;color:var(--blue);border-color:#bfdbfe}
+.element-card.orange .line-badge{background:#fff7ed;color:var(--orange);border-color:#fed7aa}
+.element-card.red .line-badge{background:#fef2f2;color:var(--red);border-color:#fecaca}
+.element-card.purple .line-badge{background:#f5f3ff;color:#7c3aed;border-color:#ddd6fe}
+.element-card.grey .line-badge{background:#f9fafb;color:var(--grey);border-color:var(--border)}
+.el-body{padding:16px 18px}
+.el-body p{font-size:13.5px;color:var(--grey);line-height:1.6;margin-bottom:12px}
+.el-body pre{margin:0;border-radius:8px;font-size:12px}
+.el-body pre code{border-radius:8px}
+
+/* ── TIP BOX ── */
+.tip{
+  display:flex;gap:10px;padding:12px 16px;
+  border-radius:10px;margin-top:12px;font-size:13px;line-height:1.5;
+}
+.tip.edit{background:#fefce8;border:1px solid #fde047;color:#713f12}
+.tip.edit::before{content:'✏️';flex-shrink:0}
+.tip.info{background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a5f}
+.tip.info::before{content:'ℹ️';flex-shrink:0}
+.tip.nav{background:#f0fdf4;border:1px solid #bbf7d0;color:#14532d}
+.tip.nav::before{content:'🔀';flex-shrink:0}
+.tip.warn{background:#fff7ed;border:1px solid #fed7aa;color:#7c2d12}
+.tip.warn::before{content:'⚠️';flex-shrink:0}
+
+/* ── FLOW TABLE ── */
+.flow-table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}
+.flow-table th{background:var(--green-dark);color:#fff;padding:10px 14px;text-align:left;font-size:12px}
+.flow-table td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+.flow-table tr:last-child td{border-bottom:none}
+.flow-table tr:hover td{background:#f9fafb}
+.badge{
+  display:inline-block;font-size:11px;font-weight:700;
+  padding:3px 8px;border-radius:20px;
+}
+.badge.green{background:#dcfce7;color:#166534}
+.badge.blue{background:#dbeafe;color:#1e40af}
+.badge.orange{background:#ffedd5;color:#9a3412}
+.badge.red{background:#fee2e2;color:#991b1b}
+.badge.grey{background:#f3f4f6;color:#374151}
+.badge.purple{background:#ede9fe;color:#5b21b6}
+
+/* ── OVERVIEW CARDS ── */
+.overview-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:20px 0}
+.ov-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:18px}
+.ov-card h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--grey);margin-bottom:8px}
+.ov-card p{font-size:14px;font-weight:600;color:var(--text);line-height:1.5}
+.color-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin:12px 0}
+.color-swatch{border-radius:10px;overflow:hidden;border:1px solid var(--border)}
+.color-swatch .swatch{height:40px}
+.color-swatch p{font-size:11px;padding:6px 8px;font-family:var(--code-font);background:#fff}
+.nav-flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:16px;background:var(--white);border-radius:12px;border:1px solid var(--border);margin:12px 0;font-size:13px}
+.nav-flow .screen{background:var(--green-soft);color:var(--green-dark);padding:5px 12px;border-radius:20px;font-weight:600}
+.nav-flow .arrow{color:var(--light);font-size:18px}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  #sidebar{transform:translateX(-100%)}
+  #main{margin-left:0}
+}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(135deg,var(--green-dark) 0%,var(--green) 100%);
+  color:#fff;border-radius:20px;padding:36px 40px;margin-bottom:40px;
+}
+.hero h1{font-size:32px;font-weight:800;letter-spacing:-1px}
+.hero p{font-size:15px;opacity:.85;margin-top:8px;line-height:1.6}
+.hero .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.hero .tag{background:rgba(255,255,255,0.15);color:#fff;font-size:12px;font-weight:600;padding:5px 12px;border-radius:20px}
+
+h3.sub{font-size:16px;font-weight:700;margin:24px 0 12px;color:var(--text)}
+hr.divider{border:none;border-top:1px solid var(--border);margin:24px 0}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<nav id="sidebar">
+  <div class="sb-logo">
+    <h1>🗺 RoadNa Docs</h1>
+    <p>Frontend Code Reference</p>
+  </div>
+
+  <div class="sb-section">Overview</div>
+  <a class="sb-link" onclick="go('overview')"><span class="icon">🏠</span>Project Overview</a>
+
+  <div class="sb-section">Auth Screens</div>
+  <a class="sb-link" onclick="go('splash')"><span class="icon">⏳</span>Splash Screen</a>
+  <a class="sb-link" onclick="go('login')"><span class="icon">🔐</span>Login Screen</a>
+  <a class="sb-link" onclick="go('register')"><span class="icon">📝</span>Register Screen</a>
+  <a class="sb-link" onclick="go('emailverify')"><span class="icon">📧</span>Email Verification</a>
+  <a class="sb-link" onclick="go('forgotpass')"><span class="icon">🔑</span>Forgot Password</a>
+  <a class="sb-link" onclick="go('resetpass')"><span class="icon">🛡️</span>Reset Password</a>
+
+  <div class="sb-section">Main Screens</div>
+  <a class="sb-link" onclick="go('home')"><span class="icon">🧭</span>Home Screen</a>
+  <a class="sb-link" onclick="go('mapview')"><span class="icon">🗺️</span>Home Map View</a>
+  <a class="sb-link" onclick="go('reports')"><span class="icon">📋</span>Reports Screen</a>
+  <a class="sb-link" onclick="go('profile')"><span class="icon">👤</span>Profile Screen</a>
+  <a class="sb-link" onclick="go('changepass')"><span class="icon">🔒</span>Change Password</a>
+
+  <div class="sb-section">Widgets</div>
+  <a class="sb-link" onclick="go('w-applogo')"><span class="icon">🖼</span>AppLogo</a>
+  <a class="sb-link" onclick="go('w-errorbanner')"><span class="icon">🚨</span>AppErrorBanner</a>
+  <a class="sb-link" onclick="go('w-successbanner')"><span class="icon">✅</span>AppSuccessBanner</a>
+  <a class="sb-link" onclick="go('w-bottomnav')"><span class="icon">📍</span>HomeBottomNavBar</a>
+  <a class="sb-link" onclick="go('w-addreport')"><span class="icon">➕</span>AddReportSheet</a>
+  <a class="sb-link" onclick="go('w-reportform')"><span class="icon">📄</span>ReportFormSheet</a>
+  <a class="sb-link" onclick="go('w-goto')"><span class="icon">🧭</span>GoToSheet</a>
+  <a class="sb-link" onclick="go('w-issuedetails')"><span class="icon">📌</span>IssueDetailsSheet</a>
+</nav>
+
+<!-- MAIN -->
+<main id="main">
+
+<!-- HERO -->
+<div class="hero">
+  <h1>RoadNa Frontend Reference</h1>
+  <p>Every screen, every widget — exactly where each element lives in the code and how to edit it.</p>
+  <div class="tags">
+    <span class="tag">Flutter</span>
+    <span class="tag">HTTP + Cloudflare Tunnel</span>
+    <span class="tag">OpenStreetMap</span>
+    <span class="tag">SharedPreferences (JWT)</span>
+    <span class="tag">Image Picker</span>
+    <span class="tag">Geolocator</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ OVERVIEW -->
+<section class="section" id="overview">
+  <div class="section-header">
+    <div class="section-icon">🏠</div>
+    <div>
+      <h2>Project Overview</h2>
+      <p>Tech stack, color palette, navigation flow, and file structure.</p>
+    </div>
+  </div>
+
+  <div class="overview-grid">
+    <div class="ov-card"><h4>Framework</h4><p>Flutter (Dart)</p></div>
+    <div class="ov-card"><h4>Backend</h4><p>HTTP REST via Cloudflare Tunnel</p></div>
+    <div class="ov-card"><h4>Auth</h4><p>JWT in SharedPreferences</p></div>
+    <div class="ov-card"><h4>Maps</h4><p>FlutterMap + OpenStreetMap</p></div>
+    <div class="ov-card"><h4>Location</h4><p>Geolocator package</p></div>
+    <div class="ov-card"><h4>Images</h4><p>ImagePicker (camera)</p></div>
+  </div>
+
+  <h3 class="sub">App Color Palette — <code>lib/core/app_colors.dart</code></h3>
+  <div class="color-grid">
+    <div class="color-swatch"><div class="swatch" style="background:#2E7D32"></div><p>green / primary<br>#2E7D32</p></div>
+    <div class="color-swatch"><div class="swatch" style="background:#1B5E20"></div><p>greenDark<br>#1B5E20</p></div>
+    <div class="color-swatch"><div class="swatch" style="background:#4CAF50"></div><p>greenLight<br>#4CAF50</p></div>
+    <div class="color-swatch"><div class="swatch" style="background:#EDF7EE"></div><p>greenSoft<br>#EDF7EE</p></div>
+    <div class="color-swatch"><div class="swatch" style="background:#F6F8F6"></div><p>background<br>#F6F8F6</p></div>
+    <div class="color-swatch"><div class="swatch" style="background:#DC2626"></div><p>red / error<br>#DC2626</p></div>
+    <div class="color-swatch"><div class="swatch" style="background:#EA580C"></div><p>orange / warning<br>#EA580C</p></div>
+    <div class="color-swatch"><div class="swatch" style="background:#1D4ED8"></div><p>blue / info<br>#1D4ED8</p></div>
+    <div class="color-swatch"><div class="swatch" style="background:#1A1A2E"></div><p>textDark<br>#1A1A2E</p></div>
+    <div class="color-swatch"><div class="swatch" style="background:#6B7280"></div><p>textGrey<br>#6B7280</p></div>
+  </div>
+
+  <h3 class="sub">Navigation Flow</h3>
+  <div class="nav-flow">
+    <span class="screen">SplashScreen</span><span class="arrow">→</span>
+    <span class="screen">LoginScreen</span><span class="arrow">→</span>
+    <span class="screen">HomeScreen</span>
+  </div>
+  <div class="nav-flow">
+    <span class="screen">LoginScreen</span><span class="arrow">→</span>
+    <span class="screen">RegisterScreen</span><span class="arrow">→</span>
+    <span class="screen">EmailVerificationScreen</span><span class="arrow">→</span>
+    <span class="screen">LoginScreen</span>
+  </div>
+  <div class="nav-flow">
+    <span class="screen">LoginScreen</span><span class="arrow">→</span>
+    <span class="screen">ForgotPasswordScreen</span><span class="arrow">→</span>
+    <span class="screen">ResetPasswordScreen</span><span class="arrow">→</span>
+    <span class="screen">LoginScreen</span>
+  </div>
+  <div class="nav-flow">
+    <span class="screen">HomeScreen</span>
+    <span class="arrow">tabs:</span>
+    <span class="screen">HomeMapView</span>
+    <span class="screen">ReportsScreen</span>
+    <span class="screen">ProfileScreen</span>
+  </div>
+  <div class="nav-flow">
+    <span class="screen">ProfileScreen</span><span class="arrow">→</span>
+    <span class="screen">ChangePasswordScreen</span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ SPLASH -->
+<section class="section" id="splash">
+  <div class="section-header">
+    <div class="section-icon">⏳</div>
+    <div>
+      <h2>Splash Screen</h2>
+      <p>First screen the user sees. Shows animated logo, then checks JWT token and routes to Home or Login.</p>
+    </div>
+  </div>
+  <div class="filepath">lib/screens/splash_screen.dart</div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">1</div><strong>White Background (Scaffold)</strong><span class="line-badge">line 83–84</span></div>
+    <div class="el-body">
+      <p>The entire screen background color is set on the Scaffold.</p>
+      <pre><code class="language-dart">Scaffold(
+  backgroundColor: AppColors.white,  // ← change this color here
+</code></pre>
+      <div class="tip edit">To change background: replace <code>AppColors.white</code> with any color e.g. <code>Color(0xFF1B5E20)</code> for dark green.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">2</div><strong>Logo Image</strong><span class="line-badge">lines 90–93</span></div>
+    <div class="el-body">
+      <p>The RoadNa logo PNG centered on screen. Width is 160px on this screen (different from Login where it's 250px via AppLogo widget).</p>
+      <pre><code class="language-dart">Image.asset(
+  'assets/images/logo.png',  // ← image file path
+  width: 160,                 // ← change size here
+),</code></pre>
+      <div class="tip edit">To swap the logo: replace <code>logo.png</code> with another file in <code>assets/images/</code> and register it in <code>pubspec.yaml</code>. To resize: change <code>width: 160</code>.</div>
+    </div>
+  </div>
+
+  <div class="element-card blue">
+    <div class="el-header"><div class="num">3</div><strong>Fade-In Animation</strong><span class="line-badge">lines 33–35, 86–87</span></div>
+    <div class="el-body">
+      <p>Logo fades from invisible (opacity 0.0) to fully visible (1.0).</p>
+      <pre><code class="language-dart">// Definition (line 33):
+_opacity = Tween&lt;double&gt;(begin: 0.0, end: 1.0).animate(
+  CurvedAnimation(parent: _controller, curve: Curves.easeIn),
+);
+
+// Usage in build (line 86):
+FadeTransition(opacity: _opacity, child: ...)</code></pre>
+      <div class="tip edit">Change <code>begin: 0.0</code> to <code>begin: 0.5</code> to start half-visible. Change <code>Curves.easeIn</code> to <code>Curves.linear</code> for a flat fade.</div>
+    </div>
+  </div>
+
+  <div class="element-card blue">
+    <div class="el-header"><div class="num">4</div><strong>Scale (Zoom-In) Animation</strong><span class="line-badge">lines 29–31, 88–89</span></div>
+    <div class="el-body">
+      <p>Logo scales from 80% size up to 100%.</p>
+      <pre><code class="language-dart">// Definition (line 29):
+_scale = Tween&lt;double&gt;(begin: 0.8, end: 1.0).animate(
+  CurvedAnimation(parent: _controller, curve: Curves.easeOut),
+);
+
+// Usage in build (line 88):
+ScaleTransition(scale: _scale, child: ...)</code></pre>
+      <div class="tip edit">Change <code>begin: 0.8</code> to <code>begin: 1.3</code> to make it zoom OUT instead of in.</div>
+    </div>
+  </div>
+
+  <div class="element-card orange">
+    <div class="el-header"><div class="num">5</div><strong>Animation Duration</strong><span class="line-badge">lines 24–27</span></div>
+    <div class="el-body">
+      <p>Both animations play for 1400 milliseconds (1.4 seconds).</p>
+      <pre><code class="language-dart">_controller = AnimationController(
+  vsync: this,
+  duration: const Duration(milliseconds: 1400), // ← change speed
+);</code></pre>
+      <div class="tip edit">Lower = faster animation. Try <code>800</code> for a snappy feel or <code>2500</code> for slow and dramatic.</div>
+    </div>
+  </div>
+
+  <div class="element-card orange">
+    <div class="el-header"><div class="num">6</div><strong>Splash Wait Duration</strong><span class="line-badge">line 39</span></div>
+    <div class="el-body">
+      <p>After 5 seconds the splash screen checks the token and navigates away.</p>
+      <pre><code class="language-dart">Future.delayed(const Duration(seconds: 5), () async {</code></pre>
+      <div class="tip edit">Change <code>seconds: 5</code> to make it shorter (e.g. <code>seconds: 2</code>) or longer.</div>
+    </div>
+  </div>
+
+  <div class="element-card grey">
+    <div class="el-header"><div class="num">7</div><strong>Token Check Logic (invisible)</strong><span class="line-badge">lines 41–54</span></div>
+    <div class="el-body">
+      <p>After the delay, reads stored JWT → decodes exp claim → routes accordingly. No server call needed.</p>
+      <pre><code class="language-dart">final token = await AuthService().getToken();
+bool goHome = false;
+if (token != null) {
+  goHome = _isTokenValid(token);  // decode JWT exp locally
+  if (!goHome) await AuthService().logout(); // expired → clear
+}
+Navigator.pushReplacementNamed(context, goHome ? '/home' : '/login');</code></pre>
+      <div class="tip info">Token is stored in SharedPreferences under key <code>auth_token</code> — see <code>lib/services/auth_service.dart</code>.</div>
+    </div>
+  </div>
+
+  <h3 class="sub">Navigation from Splash</h3>
+  <table class="flow-table">
+    <tr><th>Condition</th><th>Goes To</th><th>Method</th></tr>
+    <tr><td>No token saved</td><td><span class="badge green">Login Screen</span></td><td><code>pushReplacementNamed('/login')</code></td></tr>
+    <tr><td>Token saved & valid</td><td><span class="badge blue">Home Screen</span></td><td><code>pushReplacementNamed('/home')</code></td></tr>
+    <tr><td>Token saved but expired</td><td><span class="badge green">Login Screen</span></td><td>clears token first, then pushes <code>/login</code></td></tr>
+  </table>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ LOGIN -->
+<section class="section" id="login">
+  <div class="section-header">
+    <div class="section-icon">🔐</div>
+    <div>
+      <h2>Login Screen</h2>
+      <p>Email + password form. Validates input, calls API, stores JWT on success.</p>
+    </div>
+  </div>
+  <div class="filepath">lib/screens/login_screen.dart</div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">1</div><strong>App Logo</strong><span class="line-badge">line 88</span></div>
+    <div class="el-body">
+      <p>Uses the reusable <code>AppLogo</code> widget — shows <code>logo.png</code> at 250px wide, centered.</p>
+      <pre><code class="language-dart">const AppLogo(),  // → lib/widgets/app_widgets.dart (line 3–16)</code></pre>
+      <div class="tip edit">To resize the logo on this screen only: don't use <code>AppLogo()</code>, instead use <code>Image.asset('assets/images/logo.png', width: 200)</code>.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">2</div><strong>Email Input Field</strong><span class="line-badge">lines 90–103</span></div>
+    <div class="el-body">
+      <p>Text field with email icon, keyboard type emailAddress. Validates: not empty + must contain @.</p>
+      <pre><code class="language-dart">TextFormField(
+  controller: _emailController,
+  keyboardType: TextInputType.emailAddress,
+  decoration: _buildInput('Email', Icons.email_outlined), // hint + icon
+  validator: (value) {
+    if (value == null || value.isEmpty) return 'Enter your email';
+    if (!value.contains('@')) return 'Enter a valid email';
+    return null;
+  },
+),</code></pre>
+      <div class="tip edit">To change placeholder text: change <code>'Email'</code> in <code>_buildInput('Email', ...)</code>. To change the icon: replace <code>Icons.email_outlined</code>.</div>
+      <div class="tip edit">To add stronger email validation: replace <code>value.contains('@')</code> with a regex like <code>RegExp(r'^[\w.]+@\w+\.\w+$').hasMatch(value)</code>.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">3</div><strong>Password Input Field</strong><span class="line-badge">lines 105–129</span></div>
+    <div class="el-body">
+      <p>Password field with show/hide eye toggle. <code>_hidePassword</code> state controls visibility.</p>
+      <pre><code class="language-dart">TextFormField(
+  controller: _passController,
+  obscureText: _hidePassword,           // ← true = dots, false = text
+  decoration: _buildInput('Password', Icons.lock_outline,
+    suffix: IconButton(
+      icon: Icon(_hidePassword ? Icons.visibility_off : Icons.visibility),
+      onPressed: () => setState(() => _hidePassword = !_hidePassword),
+    ),
+  ),
+),</code></pre>
+      <div class="tip edit">To change the eye icon style: swap <code>Icons.visibility_off</code> / <code>Icons.visibility</code> with any other icon.</div>
+    </div>
+  </div>
+
+  <div class="element-card blue">
+    <div class="el-header"><div class="num">4</div><strong>Input Field Style (shared)</strong><span class="line-badge">lines 54–73</span></div>
+    <div class="el-body">
+      <p>The <code>_buildInput()</code> method sets the look of ALL input fields on this screen: border radius, colors, focus color.</p>
+      <pre><code class="language-dart">InputDecoration _buildInput(String hint, IconData icon, {Widget? suffix}) {
+  return InputDecoration(
+    hintText: hint,
+    prefixIcon: Icon(icon, color: AppColors.textLight),
+    filled: true,
+    fillColor: AppColors.white,
+    border: OutlineInputBorder(borderRadius: BorderRadius.circular(14)),
+    enabledBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(14),
+      borderSide: const BorderSide(color: AppColors.border), // grey border
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(14),
+      borderSide: const BorderSide(color: AppColors.green, width: 1.5), // green on focus
+    ),
+  );
+}</code></pre>
+      <div class="tip edit">To change border radius: modify <code>BorderRadius.circular(14)</code>. To change focus color: replace <code>AppColors.green</code>. To change field background: replace <code>AppColors.white</code>.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">5</div><strong>"Forgot Password?" Link</strong><span class="line-badge">lines 131–152</span></div>
+    <div class="el-body">
+      <p>Aligned to the right. Tapping navigates to ForgotPasswordScreen.</p>
+      <pre><code class="language-dart">Align(
+  alignment: Alignment.centerRight,
+  child: TextButton(
+    onPressed: () => Navigator.push(context,
+      MaterialPageRoute(builder: (_) => const ForgotPasswordScreen())),
+    child: const Text(
+      'Forgot Password?',
+      style: TextStyle(color: AppColors.green, fontSize: 13),
+    ),
+  ),
+),</code></pre>
+      <div class="tip edit">To change the text: replace <code>'Forgot Password?'</code>. To change color: replace <code>AppColors.green</code>.</div>
+    </div>
+  </div>
+
+  <div class="element-card red">
+    <div class="el-header"><div class="num">6</div><strong>Error Banner (inline)</strong><span class="line-badge">lines 154–160</span></div>
+    <div class="el-body">
+      <p>Only shown when <code>_errorMessage != null</code> (e.g. wrong password from server).</p>
+      <pre><code class="language-dart">if (_errorMessage != null) ...[
+  const SizedBox(height: 12),
+  AppErrorBanner(
+    message: _errorMessage!,
+    onDismiss: () => setState(() => _errorMessage = null),
+  ),
+],</code></pre>
+      <div class="tip info">Error message comes from the backend response. The <code>AppErrorBanner</code> widget lives in <code>lib/widgets/app_widgets.dart</code>.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">7</div><strong>"Sign In" Button</strong><span class="line-badge">lines 162–181</span></div>
+    <div class="el-body">
+      <p>Full-width green button. Shows a spinner when <code>_isLoading = true</code>. Calls <code>_signIn()</code>.</p>
+      <pre><code class="language-dart">SizedBox(
+  width: double.infinity,
+  height: 50,             // ← button height
+  child: ElevatedButton(
+    onPressed: _isLoading ? null : _signIn, // disabled during loading
+    style: ElevatedButton.styleFrom(
+      backgroundColor: AppColors.green,  // ← button color
+      foregroundColor: Colors.white,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+    ),
+    child: _isLoading
+      ? const CircularProgressIndicator(color: Colors.white, strokeWidth: 2.5)
+      : const Text('Sign In'),  // ← button label
+  ),
+),</code></pre>
+      <div class="tip edit">To change button text: replace <code>'Sign In'</code>. To change color: replace <code>AppColors.green</code>. To change height: modify <code>height: 50</code>.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">8</div><strong>"Don't have an account?" Link</strong><span class="line-badge">lines 183–192</span></div>
+    <div class="el-body">
+      <p>Tapping navigates to the Register screen via named route.</p>
+      <pre><code class="language-dart">TextButton(
+  onPressed: () => Navigator.pushNamed(context, '/register'),
+  child: const Text(
+    "Don't have an account? Create an account",
+    style: TextStyle(color: AppColors.green, fontSize: 13),
+  ),
+),</code></pre>
+      <div class="tip edit">To change text: replace the string. Routes are defined in <code>lib/main.dart</code>.</div>
+    </div>
+  </div>
+
+  <h3 class="sub">Sign-In Logic</h3>
+  <table class="flow-table">
+    <tr><th>Step</th><th>Code Location</th><th>What Happens</th></tr>
+    <tr><td>1. Validate form</td><td>line 31</td><td>Checks all validators pass before making API call</td></tr>
+    <tr><td>2. Call API</td><td>line 38</td><td><code>AuthService().login(email, password)</code> → POST /api/auth/login</td></tr>
+    <tr><td>3. Success</td><td>line 48</td><td>JWT stored automatically by AuthService → navigate to /home</td></tr>
+    <tr><td>4. Failure</td><td>line 50</td><td>Sets <code>_errorMessage</code> → banner appears</td></tr>
+  </table>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ REGISTER -->
+<section class="section" id="register">
+  <div class="section-header">
+    <div class="section-icon">📝</div>
+    <div>
+      <h2>Register Screen</h2>
+      <p>Account creation form with 6 fields. Validates each field, then calls register API.</p>
+    </div>
+  </div>
+  <div class="filepath">lib/screens/register_screen.dart</div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">1</div><strong>AppBar with Back Button</strong><span class="line-badge">lines 102–106</span></div>
+    <div class="el-body">
+      <p>Transparent AppBar — back arrow is green, no title text.</p>
+      <pre><code class="language-dart">appBar: AppBar(
+  backgroundColor: AppColors.white,
+  elevation: 0,
+  iconTheme: const IconThemeData(color: AppColors.green), // ← arrow color
+),</code></pre>
+      <div class="tip edit">To add a title: add <code>title: const Text('Sign Up')</code> inside AppBar.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">2</div><strong>"Create Account" Title</strong><span class="line-badge">lines 114–121</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">const Text(
+  'Create Account',
+  style: TextStyle(
+    fontSize: 22,                    // ← font size
+    fontWeight: FontWeight.bold,
+    color: AppColors.textDark,       // ← color (#1A1A2E)
+  ),
+),</code></pre>
+      <div class="tip edit">To change: replace <code>'Create Account'</code> with any string, or change <code>fontSize: 22</code>.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">3</div><strong>Subtitle Text</strong><span class="line-badge">lines 123–127</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">const Text(
+  'Join us to improve road services around you',
+  style: TextStyle(color: AppColors.textGrey),
+  textAlign: TextAlign.center,
+),</code></pre>
+      <div class="tip edit">To change subtitle: replace the string. To hide it: delete these lines.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">4</div><strong>Full Name Field</strong><span class="line-badge">lines 130–139</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">TextFormField(
+  controller: _nameController,
+  decoration: _buildInput('Full Name', Icons.person_outline),
+  validator: (value) {
+    if (value == null || value.trim().isEmpty) return 'Enter your name';
+    return null;
+  },
+),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">5</div><strong>National ID Field</strong><span class="line-badge">lines 143–156</span></div>
+    <div class="el-body">
+      <p>Validates exactly 10 digits using regex.</p>
+      <pre><code class="language-dart">TextFormField(
+  controller: _nationalIdController,
+  keyboardType: TextInputType.number,
+  decoration: _buildInput('National ID', Icons.badge_outlined),
+  validator: (value) {
+    if (!RegExp(r'^[0-9]{10}$').hasMatch(value!.trim()))
+      return 'National ID must be 10 digits';
+    return null;
+  },
+),</code></pre>
+      <div class="tip edit">To change allowed length: modify <code>{10}</code> in the regex (e.g. <code>{9}</code> for 9 digits).</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">6</div><strong>Phone Number Field</strong><span class="line-badge">lines 160–173</span></div>
+    <div class="el-body">
+      <p>Validates Jordanian phone format: 07[789]XXXXXXX</p>
+      <pre><code class="language-dart">validator: (value) {
+  if (!RegExp(r'^07[789][0-9]{7}$').hasMatch(value!.trim()))
+    return 'Enter a valid Jordanian phone number';
+  return null;
+},</code></pre>
+      <div class="tip edit">To allow other formats: change the regex. For any phone number: <code>RegExp(r'^\d{7,15}$')</code>.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">7</div><strong>Email Field</strong><span class="line-badge">lines 177–190</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">TextFormField(
+  controller: _emailController,
+  keyboardType: TextInputType.emailAddress,
+  decoration: _buildInput('Email', Icons.email_outlined),
+  validator: (value) {
+    if (!value!.contains('@')) return 'Enter a valid email';
+    return null;
+  },
+),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">8</div><strong>Password Field</strong><span class="line-badge">lines 194–224</span></div>
+    <div class="el-body">
+      <p>Minimum 8 chars + at least 1 uppercase letter.</p>
+      <pre><code class="language-dart">validator: (value) {
+  if (value!.length &lt; 8) return 'At least 8 characters';
+  if (!RegExp(r'[A-Z]').hasMatch(value)) return 'Must contain uppercase letter';
+  return null;
+},</code></pre>
+      <div class="tip edit">To change minimum length: replace <code>8</code>. To remove uppercase requirement: delete the second if-block.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">9</div><strong>Confirm Password Field</strong><span class="line-badge">lines 228–255</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">validator: (value) {
+  if (value != _passController.text) return 'Passwords do not match';
+  return null;
+},</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card red">
+    <div class="el-header"><div class="num">10</div><strong>Error Banner</strong><span class="line-badge">lines 258–264</span></div>
+    <div class="el-body">
+      <p>Shows when backend returns an error (e.g. email already registered).</p>
+      <pre><code class="language-dart">if (_errorMessage != null) ...[
+  const SizedBox(height: 12),
+  AppErrorBanner(message: _errorMessage!, onDismiss: () => setState(...)),
+],</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">11</div><strong>"Create Account" Button</strong><span class="line-badge">lines 267–286</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">ElevatedButton(
+  onPressed: _isLoading ? null : _register,
+  style: ElevatedButton.styleFrom(
+    backgroundColor: AppColors.green,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+  ),
+  child: _isLoading
+    ? const CircularProgressIndicator(color: Colors.white, strokeWidth: 2.5)
+    : const Text('Create Account'),  // ← button label
+),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">12</div><strong>"Already have an account?" Link</strong><span class="line-badge">lines 290–299</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">TextButton(
+  onPressed: () => Navigator.pop(context), // ← goes back to Login
+  child: const Text('Already have an account? Sign In',
+    style: TextStyle(color: AppColors.green, fontSize: 13)),
+),</code></pre>
+    </div>
+  </div>
+
+  <h3 class="sub">On Successful Registration</h3>
+  <div class="tip nav">Navigates to <strong>EmailVerificationScreen</strong> passing the registered email: <code>Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) =&gt; EmailVerificationScreen(email: _emailController.text)))</code></div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ EMAIL VERIFICATION -->
+<section class="section" id="emailverify">
+  <div class="section-header">
+    <div class="section-icon">📧</div>
+    <div>
+      <h2>Email Verification Screen</h2>
+      <p>Static screen shown after registration. No interaction except "Back to Sign In".</p>
+    </div>
+  </div>
+  <div class="filepath">lib/screens/email_verification_screen.dart</div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">1</div><strong>Envelope Icon</strong><span class="line-badge">lines 19–23</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">const Icon(
+  Icons.mark_email_unread_outlined,  // ← icon type
+  size: 80,                           // ← icon size
+  color: AppColors.green,             // ← icon color
+),</code></pre>
+      <div class="tip edit">To change icon: replace <code>Icons.mark_email_unread_outlined</code>. To resize: change <code>size: 80</code>.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">2</div><strong>"Check your email" Title</strong><span class="line-badge">lines 25–32</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">const Text(
+  'Check your email',
+  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: AppColors.textDark),
+),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">3</div><strong>Dynamic Email Message</strong><span class="line-badge">lines 34–42</span></div>
+    <div class="el-body">
+      <p>The <code>email</code> parameter is passed from RegisterScreen and shown inside the message.</p>
+      <pre><code class="language-dart">Text(
+  'We sent a verification link to\n$email\n\nClick the link to activate your account.',
+  textAlign: TextAlign.center,
+  style: const TextStyle(fontSize: 15, color: AppColors.textGrey, height: 1.6),
+),</code></pre>
+      <div class="tip edit">To change message text: edit the string. <code>$email</code> is the variable — keep it to show the user's email.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">4</div><strong>"Back to Sign In" Button</strong><span class="line-badge">lines 44–61</span></div>
+    <div class="el-body">
+      <p>Clears the entire navigation stack and goes to Login (so user can't press back to Register).</p>
+      <pre><code class="language-dart">ElevatedButton(
+  onPressed: () => Navigator.pushNamedAndRemoveUntil(
+    context, '/login', (route) => false,  // ← clears all routes
+  ),
+  child: const Text('Back to Sign In'),
+),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card grey">
+    <div class="el-header"><div class="num">5</div><strong>Expiry Notice</strong><span class="line-badge">lines 64–67</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">const Text(
+  'The link expires in 24 hours.',
+  style: TextStyle(color: AppColors.textLight, fontSize: 12),
+),</code></pre>
+      <div class="tip edit">To change expiry time: edit the string (make sure it matches your backend's actual token TTL).</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ FORGOT PASSWORD -->
+<section class="section" id="forgotpass">
+  <div class="section-header">
+    <div class="section-icon">🔑</div>
+    <div>
+      <h2>Forgot Password Screen</h2>
+      <p>Two states: (1) Enter email form → (2) Success state with CTA to enter code.</p>
+    </div>
+  </div>
+  <div class="filepath">lib/screens/forgot_password_screen.dart</div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">1</div><strong>AppBar Title</strong><span class="line-badge">lines 51–59</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">appBar: AppBar(
+  backgroundColor: AppColors.backgroundLight,
+  title: const Text(
+    'Forgot Password',
+    style: TextStyle(color: AppColors.textDark, fontWeight: FontWeight.bold),
+  ),
+),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card blue">
+    <div class="el-header"><div class="num">2</div><strong>State Switch Logic</strong><span class="line-badge">line 62</span></div>
+    <div class="el-body">
+      <p>One boolean controls which view is shown: <code>_emailSent</code>.</p>
+      <pre><code class="language-dart">body: Padding(
+  padding: const EdgeInsets.all(24),
+  child: _emailSent ? _buildSuccessState() : _buildFormState(),
+),</code></pre>
+      <div class="tip info"><code>_emailSent</code> starts as <code>false</code> (shows form). After API succeeds it becomes <code>true</code> (shows success state).</div>
+    </div>
+  </div>
+
+  <h3 class="sub">State 1 — Email Form (<code>_buildFormState()</code>)</h3>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">3</div><strong>Instruction Text</strong><span class="line-badge">lines 150–153</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">const Text(
+  'Enter your registered email address and we\'ll send you a link to reset your password.',
+  style: TextStyle(fontSize: 14, color: AppColors.textGrey, height: 1.5),
+),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">4</div><strong>Email Input</strong><span class="line-badge">lines 155–184</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">TextFormField(
+  controller: _emailCtrl,
+  keyboardType: TextInputType.emailAddress,
+  validator: (v) {
+    if (v == null || v.trim().isEmpty) return 'Enter your email';
+    if (!v.contains('@')) return 'Enter a valid email';
+    return null;
+  },
+),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">5</div><strong>"Send Reset Link" Button</strong><span class="line-badge">lines 195–212</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">ElevatedButton(
+  onPressed: _isLoading ? null : _sendLink,  // calls AuthService.sendResetCode()
+  child: _isLoading
+    ? const CircularProgressIndicator(color: Colors.white, strokeWidth: 2.5)
+    : const Text('Send Reset Link'),
+),</code></pre>
+    </div>
+  </div>
+
+  <h3 class="sub">State 2 — Success State (<code>_buildSuccessState()</code>)</h3>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">6</div><strong>Success Icon Circle</strong><span class="line-badge">lines 72–80</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">Container(
+  padding: const EdgeInsets.all(24),
+  decoration: BoxDecoration(
+    color: AppColors.green.withValues(alpha: 0.1), // ← light green circle
+    shape: BoxShape.circle,
+  ),
+  child: const Icon(Icons.mark_email_read_outlined, size: 64, color: AppColors.green),
+),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">7</div><strong>Success Message</strong><span class="line-badge">lines 88–94</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">Text(
+  'A 6-digit verification code was sent to ${_emailCtrl.text.trim()}.\n\n'
+  'Enter the code in the next screen to set your new password. '
+  'The code expires in 30 minutes.',
+  textAlign: TextAlign.center,
+),</code></pre>
+      <div class="tip edit">To change expiry: edit <code>'30 minutes'</code>. To change the whole message: edit the string.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">8</div><strong>"Enter Verification Code" CTA Button</strong><span class="line-badge">lines 97–117</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">ElevatedButton(
+  onPressed: () => Navigator.push(context,
+    MaterialPageRoute(builder: (_) => ResetPasswordScreen(email: _emailCtrl.text.trim()))),
+  child: const Text('Enter Verification Code'),
+),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">9</div><strong>"Back to Sign In" Outlined Button</strong><span class="line-badge">lines 119–131</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">OutlinedButton(
+  onPressed: () => Navigator.pop(context),
+  style: OutlinedButton.styleFrom(side: const BorderSide(color: AppColors.green)),
+  child: const Text('Back to Sign In', style: TextStyle(color: AppColors.green)),
+),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card grey">
+    <div class="el-header"><div class="num">10</div><strong>"Didn't receive it? Try again" Link</strong><span class="line-badge">lines 133–138</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">TextButton(
+  onPressed: () => setState(() { _emailSent = false; _errorMessage = null; }),
+  // ↑ switches BACK to the email form state
+  child: const Text("Didn't receive it? Try again"),
+),</code></pre>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ RESET PASSWORD -->
+<section class="section" id="resetpass">
+  <div class="section-header">
+    <div class="section-icon">🛡️</div>
+    <div>
+      <h2>Reset Password Screen</h2>
+      <p>Two-step flow: Step 1 = verify 6-digit code. Step 2 = set new password (unlocks after code verified).</p>
+    </div>
+  </div>
+  <div class="filepath">lib/screens/reset_password_screen.dart</div>
+
+  <div class="element-card blue">
+    <div class="el-header"><div class="num">1</div><strong>State Switch — _isVerified</strong><span class="line-badge">line 24</span></div>
+    <div class="el-body">
+      <p>Boolean that controls Step 2 visibility. Starts <code>false</code>, becomes <code>true</code> after code verified.</p>
+      <pre><code class="language-dart">bool _isVerified = false;
+
+// Step 2 container only renders if _isVerified:
+if (_isVerified) ...[
+  const SizedBox(height: 24),
+  const Text('Step 2 — Set your new password', ...),
+  ...
+]</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">2</div><strong>Step 1 Container (Code Verify)</strong><span class="line-badge">lines 140–236</span></div>
+    <div class="el-body">
+      <p>The container changes color when verified: white → light green. Icon changes to checkmark.</p>
+      <pre><code class="language-dart">Container(
+  decoration: BoxDecoration(
+    color: _isVerified ? const Color(0xFFF0FFF4) : AppColors.white,  // green when done
+    borderRadius: BorderRadius.circular(16),
+    border: Border.all(
+      color: _isVerified ? const Color(0xFFA8D5A2) : AppColors.border,
+    ),
+  ),
+  child: Column(children: [
+    Row(children: [
+      Icon(
+        _isVerified ? Icons.check_circle : Icons.mail_outline, // ← icon changes
+        color: _isVerified ? Color(0xFF2E7D32) : AppColors.primary,
+      ),
+      Text(_isVerified ? 'Code verified ✓' : 'Step 1 — Enter verification code'),
+    ]),
+    if (!_isVerified) ...[
+      // code input + verify button only shown when not verified
+    ],
+  ]),
+),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">3</div><strong>Verification Code Input</strong><span class="line-badge">lines 190–197</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">TextFormField(
+  controller: _codeController,
+  keyboardType: TextInputType.number,  // ← number keyboard
+  decoration: _inputDecoration('Verification Code', Icons.verified_outlined),
+),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">4</div><strong>"Verify Code" Button</strong><span class="line-badge">lines 207–233</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">ElevatedButton(
+  onPressed: _isVerifying ? null : _verifyCode,
+  child: _isVerifying
+    ? const CircularProgressIndicator(color: Colors.white, strokeWidth: 2.5)
+    : const Text('Verify Code'),
+),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">5</div><strong>Step 2 — New Password Fields</strong><span class="line-badge">lines 239–316</span></div>
+    <div class="el-body">
+      <p>Only visible after code verified. Two password fields with validation.</p>
+      <pre><code class="language-dart">if (_isVerified) ...[
+  TextFormField(
+    controller: _newController,
+    obscureText: true,
+    decoration: _inputDecoration('New Password', Icons.lock_outline),
+    validator: (v) {
+      if (v!.length &lt; 8) return 'At least 8 characters';
+      if (!RegExp(r'[A-Z]').hasMatch(v)) return 'Must contain an uppercase letter';
+      return null;
+    },
+  ),
+  TextFormField(
+    controller: _confirmController,
+    obscureText: true,
+    decoration: _inputDecoration('Confirm Password', Icons.lock_outline),
+    validator: (v) {
+      if (v != _newController.text) return 'Passwords do not match';
+      return null;
+    },
+  ),
+  ElevatedButton(
+    onPressed: _isSaving ? null : _resetPassword,
+    child: const Text('Save New Password'),
+  ),
+]</code></pre>
+    </div>
+  </div>
+
+  <h3 class="sub">API Calls</h3>
+  <table class="flow-table">
+    <tr><th>Action</th><th>Service Method</th><th>Endpoint</th></tr>
+    <tr><td>Verify Code</td><td><code>AuthService().verifyResetCode(email, code)</code></td><td>POST /api/auth/verify-reset-code</td></tr>
+    <tr><td>Reset Password</td><td><code>AuthService().resetPassword(email, code, newPassword)</code></td><td>POST /api/auth/reset-password</td></tr>
+    <tr><td>On success</td><td colspan="2"><code>Navigator.pushNamedAndRemoveUntil(context, '/login', ...)</code></td></tr>
+  </table>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ HOME SCREEN -->
+<section class="section" id="home">
+  <div class="section-header">
+    <div class="section-icon">🧭</div>
+    <div>
+      <h2>Home Screen</h2>
+      <p>The main shell. Manages state, permissions, API calls, and switches between 3 tabs. Everything plugs into this.</p>
+    </div>
+  </div>
+  <div class="filepath">lib/screens/home_screen.dart</div>
+
+  <div class="element-card blue">
+    <div class="el-header"><div class="num">1</div><strong>Tab Switcher — _selectedNavIndex</strong><span class="line-badge">lines 43, 417–437</span></div>
+    <div class="el-body">
+      <p>Index 0 = Map, 1 = Reports, 2 = Profile. <code>_buildBody()</code> returns the correct widget.</p>
+      <pre><code class="language-dart">int _selectedNavIndex = 0;
+
+Widget _buildBody() {
+  if (_selectedNavIndex == 2) return const ProfileScreen();
+  if (_selectedNavIndex == 1) return ReportsScreen();
+  return HomeMapView(              // default — tab 0
+    mapController: _mapController,
+    mapIssues: _mapIssues,
+    // ...
+  );
+}</code></pre>
+      <div class="tip edit">To add a 4th tab: add a new index check here and add an item to <code>HomeBottomNavBar</code> in <code>lib/widgets/bottom_nav_bar.dart</code>.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">2</div><strong>Bottom Nav Bar</strong><span class="line-badge">lines 449–451</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">HomeBottomNavBar(
+  selectedIndex: _selectedNavIndex,
+  onTap: (i) => setState(() => _selectedNavIndex = i),
+),</code></pre>
+      <div class="tip edit">To change nav items or icons: edit <code>lib/widgets/bottom_nav_bar.dart</code>.</div>
+    </div>
+  </div>
+
+  <div class="element-card orange">
+    <div class="el-header"><div class="num">3</div><strong>Loading Overlay</strong><span class="line-badge">lines 457–465</span></div>
+    <div class="el-body">
+      <p>Semi-transparent dark overlay with spinner. Shown during API calls (Go-To, routing).</p>
+      <pre><code class="language-dart">if (_isLoading)
+  const Positioned.fill(
+    child: ColoredBox(
+      color: Color(0x55000000),  // ← overlay darkness (0x55 = ~33% opacity)
+      child: Center(child: CircularProgressIndicator(color: AppColors.primary)),
+    ),
+  ),</code></pre>
+      <div class="tip edit">To change overlay opacity: modify <code>0x55</code> (hex) — higher = darker. <code>0x88</code> ≈ 53%, <code>0xAA</code> ≈ 67%.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">4</div><strong>Permissions Request</strong><span class="line-badge">lines 68–99</span></div>
+    <div class="el-body">
+      <p>Called once on init. Requests Location, Camera, Photos, Storage all at once.</p>
+      <pre><code class="language-dart">final statuses = await [
+  Permission.locationWhenInUse,
+  Permission.camera,
+  Permission.photos,    // Android 13+
+  Permission.storage,   // Android ≤12
+].request();</code></pre>
+      <div class="tip info">If location is permanently denied, a SnackBar appears with a "Settings" button to open app settings.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">5</div><strong>Load Reports from Server</strong><span class="line-badge">lines 162–174</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">Future&lt;void&gt; _loadReports() async {
+  final result = await _reportService.getAllReports();
+  if (result['success'] == true) {
+    final list = result['data'] as List&lt;dynamic&gt;;
+    setState(() {
+      _mapIssues = list.map((j) => MapIssue.fromJson(j)).toList();
+    });
+  }
+}</code></pre>
+      <div class="tip info">Called on <code>initState()</code> and again after every report submission to refresh markers.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">6</div><strong>Logout</strong><span class="line-badge">lines 176–181</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">Future&lt;void&gt; _logout() async {
+  await _authService.logout();  // clears JWT from SharedPreferences
+  if (mounted)
+    Navigator.pushNamedAndRemoveUntil(context, '/login', (_) => false);
+}</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">7</div><strong>Vote on an Issue</strong><span class="line-badge">lines 183–236</span></div>
+    <div class="el-body">
+      <p>Determines if user owns the report (blocks self-vote), then shows IssueDetailsSheet with vote callbacks.</p>
+      <pre><code class="language-dart">void _showIssueSheet(MapIssue issue) {
+  final isOwnReport = _currentUserId != null
+    && issue.ownerId != null
+    && issue.ownerId == _currentUserId;
+
+  showIssueDetailsSheet(
+    context: context,
+    issue: issue,
+    isOwnReport: isOwnReport,
+    alreadyVoted: _votedIssueIds.contains(issue.id),
+    onVoteStillThere: () async { ... },
+    onVoteFixed: () async { ... },
+  );
+}</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">8</div><strong>Submit a New Report</strong><span class="line-badge">lines 260–299</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">Future&lt;void&gt; _submitReport({
+  required AppCategory category,
+  String? subProblem, String? description, String? note,
+  List&lt;XFile&gt; images = const [],
+}) async {
+  if (_currentLocation == null) { _snack('Location unavailable.'); return; }
+
+  final result = await _reportService.createReport(
+    category: category.backendValue,
+    lat: _currentLocation!.latitude,
+    lon: _currentLocation!.longitude,
+    images: images.isEmpty ? null : images,
+    // ...
+  );
+  if (result['success'] == true) {
+    _loadReports();         // refresh markers
+    showSuccessDialog(...); // show confirmation
+  }
+}</code></pre>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ MAP VIEW -->
+<section class="section" id="mapview">
+  <div class="section-header">
+    <div class="section-icon">🗺️</div>
+    <div>
+      <h2>Home Map View</h2>
+      <p>The interactive OpenStreetMap view. Shows issue markers, location dot, routing polyline, and action buttons.</p>
+    </div>
+  </div>
+  <div class="filepath">lib/widgets/home/home_map_view.dart</div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">1</div><strong>FlutterMap (the map itself)</strong><span class="line-badge">lines 50–57</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">FlutterMap(
+  mapController: mapController,
+  options: const MapOptions(
+    initialCenter: LatLng(31.24, 36.51), // ← starting position (Jordan)
+    initialZoom: 7.5,                    // ← starting zoom level
+    minZoom: 6,                          // ← how far out can user zoom
+    maxZoom: 18,                         // ← how far in can user zoom
+  ),
+  children: [ TileLayer(...), ... ],
+),</code></pre>
+      <div class="tip edit">To change the starting map location: change <code>LatLng(31.24, 36.51)</code> to your coordinates. To change zoom: modify the numbers.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">2</div><strong>Map Tiles (OpenStreetMap)</strong><span class="line-badge">lines 59–63</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">TileLayer(
+  urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+  userAgentPackageName: 'com.example.roadna',
+),</code></pre>
+      <div class="tip edit">To use a different map style (e.g. dark mode): replace the URL with another tile provider like <code>https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}.png</code>.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">3</div><strong>Route Polyline (green line)</strong><span class="line-badge">lines 66–75</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">if (pathPoints.isNotEmpty)
+  PolylineLayer(
+    polylines: [
+      Polyline(
+        points: pathPoints,          // ← list of LatLng coordinates
+        strokeWidth: 8,              // ← line thickness
+        color: AppColors.primary,    // ← line color (green)
+      ),
+    ],
+  ),</code></pre>
+      <div class="tip edit">To change route color: replace <code>AppColors.primary</code>. To make it thicker: increase <code>strokeWidth: 8</code>.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">4</div><strong>Issue Markers on Map</strong><span class="line-badge">lines 78–100</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">MarkerLayer(
+  markers: [
+    ...mapIssues.map((issue) => Marker(
+      point: issue.position,
+      width: 40, height: 40,      // ← marker size on map
+      child: MapMarker(
+        emoji: issue.emoji,
+        color: issue.color,
+        onTap: () => onTapIssue(issue), // ← opens IssueDetailsSheet
+      ),
+    )),
+    if (currentLocation != null) Marker(  // blue dot = user location
+      point: currentLocation!,
+      width: 30, height: 30,
+      child: const CurrentLocationMarker(),
+    ),
+  ],
+),</code></pre>
+      <div class="tip edit">To change marker size on map: modify <code>width: 40, height: 40</code>.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">5</div><strong>Search Bar (top)</strong><span class="line-badge">line 125</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">SearchBarWidget(onLogout: onLogout),
+// → lib/widgets/search_bar_widget.dart</code></pre>
+      <div class="tip info">The search bar currently shows a Logout button. It is a placeholder UI — search functionality is not implemented yet.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">6</div><strong>"Clear Places" Chip</strong><span class="line-badge">lines 128–173</span></div>
+    <div class="el-body">
+      <p>Only visible when Go-To markers are shown. Shows place count + X button to clear them.</p>
+      <pre><code class="language-dart">if (showingPlaces)  // ← only appears when placeMarkers is not empty
+  Positioned(left: 14, bottom: 148,
+    child: GestureDetector(
+      onTap: onClearPlaces,
+      child: Container(
+        child: Row(children: [
+          Text(placeMarkers.first.category.emoji),
+          Text('${placeMarkers.length} places'),  // ← shows count
+          const Icon(Icons.close, size: 15),
+        ]),
+      ),
+    ),
+  ),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">7</div><strong>"Go To" Button</strong><span class="line-badge">lines 176–197</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">Positioned(left: 14, bottom: 96,
+  child: ElevatedButton.icon(
+    onPressed: onShowGoTo,             // ← opens GoToSheet
+    icon: const Icon(Icons.navigation_outlined, size: 16),
+    label: const Text('Go To'),        // ← button label
+    style: ElevatedButton.styleFrom(
+      backgroundColor: AppColors.white,
+      foregroundColor: AppColors.greenDark,
+    ),
+  ),
+),</code></pre>
+      <div class="tip edit">To change button position: modify <code>left: 14, bottom: 96</code>. To change label: replace <code>'Go To'</code>.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">8</div><strong>Re-center Button (📍 circle)</strong><span class="line-badge">lines 200–218</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">Positioned(right: 14, bottom: 150,
+  child: Material(
+    color: AppColors.white,
+    shape: const CircleBorder(),
+    elevation: 3,
+    child: InkWell(
+      onTap: onRecenter,    // ← moves map back to current location
+      child: const SizedBox(
+        width: 42, height: 42,
+        child: Icon(Icons.my_location, color: AppColors.textGrey),
+      ),
+    ),
+  ),
+),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">9</div><strong>Add Report FAB (+ button)</strong><span class="line-badge">lines 221–229</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">Positioned(right: 14, bottom: 86,
+  child: FloatingActionButton(
+    backgroundColor: AppColors.green,   // ← FAB color
+    onPressed: onShowAddReport,          // ← opens AddReportSheet
+    child: const Icon(Icons.add, color: Colors.white),
+  ),
+),</code></pre>
+      <div class="tip edit">To change FAB color: replace <code>AppColors.green</code>. To change position: modify <code>right: 14, bottom: 86</code>.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ REPORTS SCREEN -->
+<section class="section" id="reports">
+  <div class="section-header">
+    <div class="section-icon">📋</div>
+    <div>
+      <h2>Reports Screen</h2>
+      <p>User's own submitted reports list. Tap to see full details, AI analysis, and vote history. Auto-polls while AI is processing.</p>
+    </div>
+  </div>
+  <div class="filepath">lib/screens/reports_screen.dart</div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">1</div><strong>"My Reports" Header</strong><span class="line-badge">lines 642–652</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">const Text(
+  "My Reports",
+  style: TextStyle(
+    fontSize: 28,                  // ← size
+    fontWeight: FontWeight.bold,
+    color: AppColors.green,        // ← green color
+  ),
+),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">2</div><strong>Subtitle Text</strong><span class="line-badge">lines 654–659</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">const Text(
+  "Tap to see AI analysis &amp; live votes",
+  style: TextStyle(color: AppColors.textGrey, fontSize: 14),
+),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">3</div><strong>Report List Items</strong><span class="line-badge">lines 697–763</span></div>
+    <div class="el-body">
+      <p>Each item is a card with: emoji, title, status badge. Tap opens the details sheet.</p>
+      <pre><code class="language-dart">InkWell(
+  onTap: () => showDetails(index),
+  child: Container(
+    padding: const EdgeInsets.all(16),
+    decoration: BoxDecoration(
+      color: AppColors.white,
+      borderRadius: BorderRadius.circular(18),
+      border: Border.all(color: AppColors.border.withValues(alpha: 0.5)),
+    ),
+    child: Row(children: [
+      Text(item.emoji, style: TextStyle(fontSize: 24)), // ← category emoji
+      Text(item.title, ...),                             // ← report title
+      Container(..., child: Text(badgeText)),            // ← status badge
+    ]),
+  ),
+),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">4</div><strong>Status Badge Colors</strong><span class="line-badge">lines 702–715</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">Color badgeColor = Colors.orange;  // default = Under Processing
+String badgeText = 'Under Processing';
+
+if (status == 'RESOLVED') { badgeColor = Colors.green;  badgeText = 'Resolved'; }
+if (status == 'REJECTED') { badgeColor = Colors.red;    badgeText = 'Rejected'; }
+if (status == 'PENDING')  { badgeColor = Colors.blue;   badgeText = 'Under Review'; }</code></pre>
+      <div class="tip edit">To add a new status: add another <code>if</code> block with your status string and color.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">5</div><strong>Pull to Refresh</strong><span class="line-badge">lines 693–696</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">RefreshIndicator(
+  color: AppColors.green,    // ← spinner color
+  onRefresh: fetchReports,   // ← pulls fresh data from server
+  child: ListView.builder(...),
+)</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card blue">
+    <div class="el-header"><div class="num">6</div><strong>Details Bottom Sheet</strong><span class="line-badge">lines 769–1102</span></div>
+    <div class="el-body">
+      <p>Opens as a DraggableScrollableSheet. Contains: title + badge, sub-problem pill, location, community votes (read-only), photo strip, AI analysis card, AI history timeline.</p>
+      <pre><code class="language-dart">DraggableScrollableSheet(
+  expand: false,
+  initialChildSize: 0.75,  // ← starts at 75% of screen height
+  minChildSize: 0.4,        // ← can collapse to 40%
+  maxChildSize: 0.95,       // ← can expand to 95%
+  builder: (_, scrollController) => SingleChildScrollView(...),
+)</code></pre>
+      <div class="tip edit">To change initial sheet height: modify <code>initialChildSize: 0.75</code>. Range is 0.0 to 1.0.</div>
+    </div>
+  </div>
+
+  <div class="element-card orange">
+    <div class="el-header"><div class="num">7</div><strong>AI Analysis Card</strong><span class="line-badge">lines 113–214 (top of file)</span></div>
+    <div class="el-body">
+      <p>Shows pending spinner OR priority badge + confidence bar + reason text.</p>
+      <pre><code class="language-dart">// Pending state (AI not done yet):
+const CircularProgressIndicator(strokeWidth: 2, color: AppColors.info)
+const Text('AI analysis is in progress…')
+
+// Done state:
+_buildPriorityRow(issue.priority!, issue.prioritySetBy)  // CRITICAL/HIGH/MEDIUM/LOW
+_buildConfidenceBar(issue.validationScore)               // 0–100% bar
+Text(issue.validationReason!)                            // reason text</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card blue">
+    <div class="el-header"><div class="num">8</div><strong>Auto-Polling (every 4 seconds)</strong><span class="line-badge">lines 821–851</span></div>
+    <div class="el-body">
+      <p>While AI hasn't run yet (<code>revalidationCount == 0</code>), polls every 4s automatically.</p>
+      <pre><code class="language-dart">_pollingTimer = Timer.periodic(
+  const Duration(seconds: 4),  // ← polling interval
+  (_) {
+    if (myReports[idx].revalidationCount &gt; 0) {
+      _pollingTimer?.cancel();  // stop once AI is done
+      return;
+    }
+    refreshReport(setSheetState);
+  },
+);</code></pre>
+      <div class="tip edit">To change polling speed: modify <code>seconds: 4</code>. To disable polling: remove this Timer block entirely.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ PROFILE SCREEN -->
+<section class="section" id="profile">
+  <div class="section-header">
+    <div class="section-icon">👤</div>
+    <div>
+      <h2>Profile Screen</h2>
+      <p>User account page: avatar, info rows, change password, help/about expandable sections, and sign out.</p>
+    </div>
+  </div>
+  <div class="filepath">lib/screens/profile_screen.dart</div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">1</div><strong>Edit Profile Button (top-right)</strong><span class="line-badge">lines 217–224</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">Align(
+  alignment: Alignment.centerRight,
+  child: IconButton(
+    tooltip: 'Edit Profile',
+    icon: const Icon(Icons.edit_outlined, color: AppColors.primary),
+    onPressed: _showEditProfileDialog,  // ← opens edit dialog
+  ),
+),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">2</div><strong>Avatar Circle (initials)</strong><span class="line-badge">lines 225–250</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">Container(
+  width: 80, height: 80,
+  decoration: BoxDecoration(
+    shape: BoxShape.circle,
+    color: AppColors.primary,       // ← circle color
+    boxShadow: [...],
+  ),
+  child: Center(
+    child: Text(
+      user.initials,                // ← e.g. "AJ" for "Ahmad Jamal"
+      style: TextStyle(color: Colors.white, fontSize: 26, fontWeight: FontWeight.bold),
+    ),
+  ),
+),</code></pre>
+      <div class="tip edit">To show a profile photo instead of initials: replace <code>Text(user.initials)</code> with <code>Image.network(user.photoUrl)</code>.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">3</div><strong>User Name + Email Display</strong><span class="line-badge">lines 252–267</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">Text(user.fullName,       // ← from UserProfile model
+  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+Text(user.email,
+  style: TextStyle(fontSize: 13, color: AppColors.textGrey)),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">4</div><strong>Info Card (Name / Email / Phone)</strong><span class="line-badge">lines 284–316</span></div>
+    <div class="el-body">
+      <p>Three <code>buildInfoRow()</code> calls inside a white rounded container.</p>
+      <pre><code class="language-dart">buildInfoRow(icon: Icons.person_outline, label: 'Full Name', value: user.fullName),
+buildInfoRow(icon: Icons.email_outlined, label: 'Email', value: user.email),
+buildInfoRow(icon: Icons.phone_outlined, label: 'Phone', value: user.phone, isLast: true),</code></pre>
+      <div class="tip edit">To add a new row: duplicate a <code>buildInfoRow()</code> call with a new icon, label, and value. Remove <code>isLast: true</code> from the previous last row first.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">5</div><strong>"Change Password" Row</strong><span class="line-badge">lines 332–343</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">buildTapRow(
+  icon: Icons.lock_outline,
+  title: 'Change Password',
+  onTap: () => Navigator.push(context,
+    MaterialPageRoute(builder: (_) => const ChangePasswordScreen())),
+),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">6</div><strong>"Help & Support" Expandable</strong><span class="line-badge">lines 344–462</span></div>
+    <div class="el-body">
+      <p>Uses <code>ExpansionTile</code>. Contains: support email, 4 FAQ items (each also expandable).</p>
+      <pre><code class="language-dart">ExpansionTile(
+  leading: const Icon(Icons.help_outline, color: AppColors.primary),
+  title: const Text('Help &amp; Support'),
+  children: [
+    // Support email container
+    Text('support@roadna.app'),  // ← change email here
+    // FAQ items
+    buildFaqItem(question: 'How do I create a report?', answer: '...'),
+    buildFaqItem(question: 'What does voting mean?', answer: '...'),
+    // ... 2 more
+  ],
+),</code></pre>
+      <div class="tip edit">To change support email: find <code>'support@roadna.app'</code> at line ~408 and replace it. To add an FAQ: add another <code>buildFaqItem()</code> call.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">7</div><strong>"About RoadNa" Expandable</strong><span class="line-badge">lines 464–557</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">ExpansionTile(
+  leading: const Icon(Icons.info_outline, color: AppColors.primary),
+  title: const Text('About RoadNa'),
+  children: const [
+    Text('RoadNa is a smart road reporting app...'),   // ← app description
+    Text('Together, we make roads safer'),             // ← tagline
+    Text('Version 1.0.0'),                             // ← version number
+  ],
+),</code></pre>
+      <div class="tip edit">To update version: change <code>'Version 1.0.0'</code>. To change description: edit the long Text string.</div>
+    </div>
+  </div>
+
+  <div class="element-card red">
+    <div class="el-header"><div class="num">8</div><strong>Sign Out Button</strong><span class="line-badge">lines 563–591</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">InkWell(
+  onTap: () => logout(context),
+  child: Row(children: [
+    const Icon(Icons.logout_rounded, size: 20, color: AppColors.red),
+    const Text('Sign Out', style: TextStyle(color: AppColors.red, ...)),
+  ]),
+),</code></pre>
+      <div class="tip edit">To change text or color: edit <code>'Sign Out'</code> and <code>AppColors.red</code>.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">9</div><strong>Edit Profile Dialog</strong><span class="line-badge">lines 57–163</span></div>
+    <div class="el-body">
+      <p>AlertDialog with Full Name + Phone fields. Calls PUT /api/user/profile on Save.</p>
+      <pre><code class="language-dart">showDialog&lt;bool&gt;(
+  context: context,
+  builder: (ctx) =&gt; AlertDialog(
+    title: const Text('Edit Profile'),
+    content: Column(children: [
+      TextField(controller: nameCtrl,  decoration: inputDecoration('Full Name', ...)),
+      TextField(controller: phoneCtrl, decoration: inputDecoration('Phone Number', ...)),
+    ]),
+    actions: [
+      TextButton(child: Text('Cancel'), onPressed: () =&gt; Navigator.pop(ctx, false)),
+      ElevatedButton(child: Text('Save'), onPressed: () =&gt; Navigator.pop(ctx, true)),
+    ],
+  ),
+);</code></pre>
+      <div class="tip edit">To add more editable fields (e.g. email): add another <code>TextField</code> and pass it to <code>_userService.updateProfile()</code>.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ CHANGE PASSWORD -->
+<section class="section" id="changepass">
+  <div class="section-header">
+    <div class="section-icon">🔒</div>
+    <div>
+      <h2>Change Password Screen</h2>
+      <p>3-field form: current password, new password, confirm. Validates and calls API.</p>
+    </div>
+  </div>
+  <div class="filepath">lib/screens/change_password_screen.dart</div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">1</div><strong>AppBar</strong><span class="line-badge">lines 112–124</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">appBar: AppBar(
+  backgroundColor: AppColors.backgroundLight,
+  elevation: 0,
+  iconTheme: const IconThemeData(color: AppColors.primary),
+  title: const Text('Change Password',
+    style: TextStyle(color: AppColors.textDark, fontWeight: FontWeight.bold)),
+),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">2</div><strong>All 3 Password Fields</strong><span class="line-badge">lines 131–180</span></div>
+    <div class="el-body">
+      <p>All 3 fields use the same <code>input()</code> helper that takes label, hide-state, and toggle callback.</p>
+      <pre><code class="language-dart">// Current Password
+TextFormField(controller: currentController, obscureText: hideCurrent,
+  decoration: input('Current Password', hideCurrent, () {
+    setState(() =&gt; hideCurrent = !hideCurrent);
+  }),
+  validator: (v) { if (v!.isEmpty) return 'Enter current password'; return null; },
+),
+
+// New Password
+TextFormField(controller: newController, obscureText: hideNew,
+  decoration: input('New Password', hideNew, () => setState(() => hideNew = !hideNew)),
+  validator: (v) {
+    if (v!.length &lt; 8) return 'At least 8 characters';
+    if (!RegExp(r'[A-Z]').hasMatch(v)) return 'Must contain uppercase letter';
+    return null;
+  },
+),
+
+// Confirm Password
+TextFormField(controller: confirmController, obscureText: hideConfirm,
+  decoration: input('Confirm Password', hideConfirm, () => setState(() => hideConfirm = !hideConfirm)),
+  validator: (v) {
+    if (v != newController.text) return 'Passwords do not match';
+    return null;
+  },
+),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card red">
+    <div class="el-header"><div class="num">3</div><strong>Error Banner</strong><span class="line-badge">lines 182–188</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">if (_errorMessage != null) ...[
+  const SizedBox(height: 16),
+  AppErrorBanner(message: _errorMessage!, onDismiss: () => setState(() => _errorMessage = null)),
+],</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">4</div><strong>"Save" Button</strong><span class="line-badge">lines 190–215</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">ElevatedButton(
+  onPressed: isLoading ? null : _changePassword,
+  style: ElevatedButton.styleFrom(backgroundColor: AppColors.green),
+  child: isLoading
+    ? const CircularProgressIndicator(color: Colors.white, strokeWidth: 2.5)
+    : const Text('Save', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+),</code></pre>
+    </div>
+  </div>
+
+  <h3 class="sub">On Success</h3>
+  <div class="tip nav">Pops back to Profile and shows a green SnackBar: <code>"Password changed successfully."</code></div>
+  <pre style="margin:8px 0;border-radius:8px;font-size:12px"><code class="language-dart">Navigator.pop(context);
+ScaffoldMessenger.of(context).showSnackBar(
+  const SnackBar(
+    content: Text('Password changed successfully.'),
+    backgroundColor: Colors.green,
+    duration: Duration(seconds: 3),
+  ),
+);</code></pre>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ WIDGETS -->
+<section class="section" id="w-applogo">
+  <div class="section-header">
+    <div class="section-icon">🖼</div>
+    <div><h2>Widget: AppLogo</h2><p>Reusable logo image — used on Login screen.</p></div>
+  </div>
+  <div class="filepath">lib/widgets/app_widgets.dart — lines 3–16</div>
+  <pre style="border-radius:10px;font-size:13px"><code class="language-dart">class AppLogo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Image.asset(
+        'assets/images/logo.png',
+        width: 250,           // ← change width here
+        fit: BoxFit.contain,
+      ),
+    );
+  }
+}</code></pre>
+  <div class="tip edit">Used in: <code>LoginScreen</code> (line 88). To use on other screens: add <code>const AppLogo()</code> anywhere.</div>
+</section>
+
+<section class="section" id="w-errorbanner">
+  <div class="section-header">
+    <div class="section-icon">🚨</div>
+    <div><h2>Widget: AppErrorBanner</h2><p>Red inline error banner. Used on all form screens instead of SnackBar.</p></div>
+  </div>
+  <div class="filepath">lib/widgets/app_widgets.dart — lines 19–62</div>
+  <pre style="border-radius:10px;font-size:13px"><code class="language-dart">// How to use:
+AppErrorBanner(
+  message: 'Your error message here',
+  onDismiss: () => setState(() => _errorMessage = null), // null = no X button
+)
+
+// Styling (inside the widget):
+color: const Color(0xFFFFF0F0),          // ← light red background
+border: Border.all(color: Color(0xFFFFCDD2))  // ← pink border
+Icon(Icons.error_outline, color: Color(0xFFC62828))  // ← dark red icon
+TextStyle(color: Color(0xFFC62828))      // ← dark red text</code></pre>
+  <div class="tip edit">To change the banner color to orange: replace the colors — background: <code>0xFFFFF3E0</code>, border: <code>0xFFFFCC80</code>, icon/text: <code>0xFFE65100</code>.</div>
+</section>
+
+<section class="section" id="w-successbanner">
+  <div class="section-header">
+    <div class="section-icon">✅</div>
+    <div><h2>Widget: AppSuccessBanner</h2><p>Green inline success banner. Used in ProfileScreen after successful edit.</p></div>
+  </div>
+  <div class="filepath">lib/widgets/app_widgets.dart — lines 65–108</div>
+  <pre style="border-radius:10px;font-size:13px"><code class="language-dart">// How to use:
+AppSuccessBanner(
+  message: 'Profile updated successfully.',
+  onDismiss: () => setState(() => _updateSuccess = null),
+)
+
+// Styling:
+color: const Color(0xFFF0FFF4),             // ← light green bg
+border: Border.all(color: Color(0xFFA8D5A2)) // ← green border
+Icon(Icons.check_circle_outline, color: Color(0xFF2E7D32))</code></pre>
+</section>
+
+<section class="section" id="w-bottomnav">
+  <div class="section-header">
+    <div class="section-icon">📍</div>
+    <div><h2>Widget: HomeBottomNavBar</h2><p>3-tab navigation bar at the bottom of HomeScreen.</p></div>
+  </div>
+  <div class="filepath">lib/widgets/bottom_nav_bar.dart</div>
+  <pre style="border-radius:10px;font-size:13px"><code class="language-dart">// Tabs defined at lines 21–23:
+_item(Icons.home_filled,          'Home',    0),  // ← tab 0
+_item(Icons.description_outlined, 'Reports', 1),  // ← tab 1
+_item(Icons.person_outline,       'Profile', 2),  // ← tab 2
+
+// Each item:
+Widget _item(IconData icon, String label, int index) {
+  final active = selectedIndex == index;
+  final color = active ? AppColors.green : AppColors.textGrey;
+  return Expanded(child: InkWell(
+    onTap: () => onTap(index),
+    child: Column(children: [
+      Icon(icon, color: color),           // ← icon
+      Text(label, ...),                   // ← label text
+      if (active) Container(             // ← green dot for active tab
+        width: 4, height: 4,
+        decoration: BoxDecoration(shape: BoxShape.circle, color: AppColors.green),
+      ),
+    ]),
+  ));
+}</code></pre>
+  <div class="tip edit">To rename a tab: change its label string. To change an icon: replace the <code>Icons.*</code> value. To add a 4th tab: duplicate one <code>_item()</code> call with index 3 and handle it in <code>HomeScreen._buildBody()</code>.</div>
+</section>
+
+<section class="section" id="w-addreport">
+  <div class="section-header">
+    <div class="section-icon">➕</div>
+    <div><h2>Widget: AddReportSheet</h2><p>Bottom sheet grid of issue categories. Opened by the + FAB on the map.</p></div>
+  </div>
+  <div class="filepath">lib/widgets/home/add_report_sheet.dart</div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">1</div><strong>"Select Issue Type" Header</strong><span class="line-badge">lines 41–48</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">const Text('Select Issue Type',
+  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800)),</code></pre>
+      <div class="tip edit">To change title: replace <code>'Select Issue Type'</code>.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">2</div><strong>Category Grid (2 columns)</strong><span class="line-badge">lines 66–90</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">GridView.builder(
+  itemCount: reportCategories.where((c) => c.backendValue != 'other').length,
+  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+    crossAxisCount: 2,         // ← columns (change to 3 for 3-column grid)
+    childAspectRatio: 2.2,     // ← tile width:height ratio
+    crossAxisSpacing: 14,
+    mainAxisSpacing: 14,
+  ),
+  // Categories come from: lib/models/app_category.dart → reportCategories list
+)</code></pre>
+      <div class="tip edit">To add/remove categories: edit the <code>reportCategories</code> list in <code>lib/models/app_category.dart</code>. Each entry needs <code>backendValue</code>, <code>displayName</code>, <code>emoji</code>, and <code>color</code>.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">3</div><strong>"Other Issue" Button (full-width)</strong><span class="line-badge">lines 160–218</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">// Separate from the grid, shown below a divider:
+_otherButton(context, onCategorySelected)
+
+// Shows: ❓ emoji + "Other Issue" title + subtitle text
+const Text('Other Issue', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700)),
+const Text("Can't find your issue type? Describe it here", style: TextStyle(fontSize: 11)),</code></pre>
+      <div class="tip edit">To change the "Other" description: find the subtitle text at line ~207 and edit it.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="w-reportform">
+  <div class="section-header">
+    <div class="section-icon">📄</div>
+    <div><h2>Widget: ReportFormSheet</h2><p>Form sheet shown after picking a category. Has sub-problem list, description, note, photos, and submit.</p></div>
+  </div>
+  <div class="filepath">lib/widgets/home/report_form_sheet.dart</div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">1</div><strong>Header (category emoji + name)</strong><span class="line-badge">lines 143–168</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">Text('${widget.category.emoji}  ${widget.category.displayName}',
+  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800))</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">2</div><strong>Sub-Problem Radio List</strong><span class="line-badge">lines 176–179, 316–396</span></div>
+    <div class="el-body">
+      <p>Options come from <code>lib/data/sub_problems.dart</code> keyed by category.</p>
+      <pre><code class="language-dart">List&lt;String&gt; get _options => subProblems[widget.category.backendValue] ?? [];
+
+// Each option is a radio tile:
+_radioTile(label: option, value: option)
+// Plus "Other (not in list)" at the bottom</code></pre>
+      <div class="tip edit">To add/change sub-problems for a category: edit <code>lib/data/sub_problems.dart</code>. Find the map key for your category and add strings to its list.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">3</div><strong>Description Text Area</strong><span class="line-badge">lines 398–425</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">TextField(
+  controller: _descController,
+  maxLines: 4,                              // ← height of text area
+  decoration: InputDecoration(
+    hintText: 'Describe the issue in detail...',  // ← placeholder
+  ),
+),</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">4</div><strong>Take Photo Button</strong><span class="line-badge">lines 456–475</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">OutlinedButton.icon(
+  onPressed: _takePhoto,
+  icon: const Icon(Icons.camera_alt_outlined, size: 18),
+  label: const Text('Take Photo'),
+  // Max 5 photos — _selectedImages.length &lt; 5 check at line 207
+)</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">5</div><strong>Submit Button</strong><span class="line-badge">lines 278–297</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">ElevatedButton(
+  onPressed: _submit,
+  child: const Text('Submit Report',
+    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
+)</code></pre>
+      <div class="tip warn">Validation requires at least 1 photo. To remove this requirement: delete the <code>if (_selectedImages.isEmpty)</code> check at line 98–100.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="w-goto">
+  <div class="section-header">
+    <div class="section-icon">🧭</div>
+    <div><h2>Widget: GoToSheet</h2><p>Bottom sheet list of nearby place categories (Restaurant, Gas, Park, etc.).</p></div>
+  </div>
+  <div class="filepath">lib/widgets/home/go_to_sheet.dart</div>
+  <pre style="border-radius:10px;font-size:13px"><code class="language-dart">// Title:
+const Text('Go To Nearest...', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800))
+
+// Category list from lib/models/app_category.dart → placeCategories:
+...placeCategories.map((cat) {
+  return ListTile(
+    onTap: () { Navigator.pop(context); onCategorySelected(cat); },
+    leading: Container(child: Text(cat.emoji, ...)),   // ← emoji in green circle
+    title: Text(cat.displayName, ...),                 // ← category name
+    subtitle: const Text('Find nearest available location'),  // ← subtitle
+    trailing: const Icon(Icons.chevron_right),
+  );
+})</code></pre>
+  <div class="tip edit">To add a new place category: add it to <code>placeCategories</code> list in <code>lib/models/app_category.dart</code>. The backend must support that category string.</div>
+  <div class="tip edit">To change the subtitle text: replace <code>'Find nearest available location'</code> in the <code>subtitle</code> property.</div>
+</section>
+
+<section class="section" id="w-issuedetails">
+  <div class="section-header">
+    <div class="section-icon">📌</div>
+    <div><h2>Widget: IssueDetailsSheet</h2><p>Bottom sheet shown when tapping an issue marker on the map. Shows info and vote buttons.</p></div>
+  </div>
+  <div class="filepath">lib/widgets/home/issue_details_sheet.dart</div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">1</div><strong>Issue Emoji Banner</strong><span class="line-badge">lines 212–220</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">Container(
+  width: double.infinity, height: 120,
+  decoration: BoxDecoration(
+    color: const Color(0xFFEEF4E9),  // ← light green background
+    borderRadius: BorderRadius.circular(20),
+  ),
+  child: Center(child: Text(issue.emoji, style: TextStyle(fontSize: 38))),
+),</code></pre>
+      <div class="tip edit">To change banner color: replace <code>Color(0xFFEEF4E9)</code>. To change emoji size: modify <code>fontSize: 38</code>.</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">2</div><strong>Vote Buttons (Still There / Fixed)</strong><span class="line-badge">lines 393–628</span></div>
+    <div class="el-body">
+      <p>Two OutlinedButtons side by side. Each shows count + confirms before submitting.</p>
+      <pre><code class="language-dart">// "Still There" button — green border:
+OutlinedButton(
+  style: OutlinedButton.styleFrom(
+    side: const BorderSide(color: AppColors.green, width: 2.5),
+  ),
+  child: Column(children: [
+    Text(alreadyVoted ? '↺ Still there' : '✓ Still there'),
+    Text('${issue.stillThereCount}'),  // ← current count
+  ]),
+)
+
+// "Fixed" button — red border:
+OutlinedButton(
+  style: OutlinedButton.styleFrom(
+    side: const BorderSide(color: Color(0xFFC43C34), width: 2.5),
+  ),
+  child: Column(children: [
+    Text(alreadyVoted ? '↺ Fixed' : '✗ Fixed'),
+    Text('${issue.fixedCount}'),
+  ]),
+)</code></pre>
+      <div class="tip info">If <code>isOwnReport = true</code>: vote buttons are hidden and replaced with read-only counters + "You cannot vote on your own report."</div>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">3</div><strong>AI Priority Badge</strong><span class="line-badge">lines 272–278</span></div>
+    <div class="el-body">
+      <pre><code class="language-dart">if (issue.priority != null) ...[
+  Align(
+    alignment: Alignment.centerLeft,
+    child: _buildPriorityChip(issue.priority!),
+    // CRITICAL=red, HIGH=orange, MEDIUM=blue, LOW=green
+  ),
+],</code></pre>
+    </div>
+  </div>
+
+  <div class="element-card">
+    <div class="el-header"><div class="num">4</div><strong>Success State (after voting)</strong><span class="line-badge">lines 638–686</span></div>
+    <div class="el-body">
+      <p>After a successful vote, the sheet content switches to a confirmation view.</p>
+      <pre><code class="language-dart">// submitted = true after vote
+Container(
+  child: const Center(child: Text('✅', style: TextStyle(fontSize: 40))),
+),
+const Text('Successfully Submitted', style: TextStyle(fontSize: 18, ...)),
+Text(selectedVote == 'still_there'
+  ? 'Your vote was submitted successfully as: Still there.'
+  : 'Your vote was submitted successfully as: Fixed.'),
+ElevatedButton(onPressed: () => Navigator.pop(context), child: Text('Done')),</code></pre>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+hljs.highlightAll();
+
+function go(id) {
+  const el = document.getElementById(id);
+  if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  document.querySelectorAll('.sb-link').forEach(l => l.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+}
+
+// Highlight active sidebar link on scroll
+const sections = document.querySelectorAll('.section');
+const links = document.querySelectorAll('.sb-link');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 80) current = s.id;
+  });
+  links.forEach(l => {
+    l.classList.toggle('active', l.getAttribute('onclick')?.includes(`'${current}'`));
+  });
+}, { passive: true });
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+"""
+seed_firebase.py
+----------------
+One-shot script to push seed report data into Firebase Realtime Database.
+Mirrors the values in seed_data.sql so both stores stay in sync.
+
+Run from the backend directory:
+    python seed_firebase.py
+"""
+
+import firebase_admin
+from firebase_admin import credentials, db
+
+# ── Init ──────────────────────────────────────────────────────────────────────
+SERVICE_ACCOUNT = (
+    "backend/src/main/resources/"
+    "roadna-ce6a0-firebase-adminsdk-fbsvc-bfa3e5fb4c.json"
+)
+DATABASE_URL = "https://roadna-ce6a0-default-rtdb.europe-west1.firebasedatabase.app"
+
+cred = credentials.Certificate(SERVICE_ACCOUNT)
+firebase_admin.initialize_app(cred, {"databaseURL": DATABASE_URL})
+
+# ── Seed data (mirrors seed_data.sql) ─────────────────────────────────────────
+REPORTS = {
+    "18677a7f-df4e-4b2b-92e8-ba704de81e9b": {
+        "stillVotes": 25, "fixedVotes": 0,
+        "status": "PENDING", "priority": "CRITICAL",
+    },
+    "37d52870-e326-422c-b084-a200c54825b2": {
+        "stillVotes": 9,  "fixedVotes": 0,
+        "status": "PENDING", "priority": "MEDIUM",
+    },
+    "3ad7c3f4-e960-4333-a57c-82770ae64c2d": {
+        "stillVotes": 12, "fixedVotes": 1,
+        "status": "PENDING", "priority": "HIGH",
+    },
+    "5efca3f9-7315-4530-98b4-5d076c96cc1d": {
+        "stillVotes": 30, "fixedVotes": 1,
+        "status": "IN_PROGRESS", "priority": "HIGH",
+    },
+    "9f2e910f-0848-4296-9388-cae488e6c6e2": {
+        "stillVotes": 12, "fixedVotes": 1,
+        "status": "PENDING", "priority": "HIGH",
+    },
+    "5ed5ac23-3535-4692-84e9-4a6b9f941817": {
+        "stillVotes": 1,  "fixedVotes": 8,
+        "status": "REJECTED", "priority": "LOW",
+    },
+    "a09b2c4a-6ef8-4699-a560-8dedfb2b3245": {
+        "stillVotes": 18, "fixedVotes": 2,
+        "status": "IN_PROGRESS", "priority": "HIGH",
+    },
+    "ac036b29-e0f9-455d-8f49-41fcd655997e": {
+        "stillVotes": 7,  "fixedVotes": 10,
+        "status": "RESOLVED", "priority": "LOW",
+    },
+    "b2cf0a8c-18c0-4ce6-9f2f-7871da495c89": {
+        "stillVotes": 5,  "fixedVotes": 0,
+        "status": "REJECTED", "priority": "MEDIUM",
+    },
+    "eb90721f-92aa-41a0-8c18-3cabddd6b413": {
+        "stillVotes": 3,  "fixedVotes": 0,
+        "status": "REJECTED", "priority": "LOW",
+    },
+    "ff44af90-cc64-467d-8811-0bbc66a80e69": {
+        "stillVotes": 11, "fixedVotes": 0,
+        "status": "PENDING", "priority": "MEDIUM",
+    },
+}
+
+# ── Push ──────────────────────────────────────────────────────────────────────
+print(f"Connecting to {DATABASE_URL} ...")
+reports_ref = db.reference("reports")
+
+ok = 0
+fail = 0
+for report_id, data in REPORTS.items():
+    try:
+        reports_ref.child(report_id).set(data)
+        print(f"  ✓  {report_id}  →  {data['status']} / {data['priority']}")
+        ok += 1
+    except Exception as e:
+        print(f"  ✗  {report_id}  →  ERROR: {e}")
+        fail += 1
+
+print(f"\nDone — {ok} pushed, {fail} failed.")

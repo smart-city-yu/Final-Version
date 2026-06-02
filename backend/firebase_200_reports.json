@@ -1,0 +1,1202 @@
+﻿{
+    "a0000001-beef-4abc-8def-000000000001":  {
+                                                 "stillVotes":  3,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000002-beef-4abc-8def-000000000002":  {
+                                                 "stillVotes":  4,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000003-beef-4abc-8def-000000000003":  {
+                                                 "stillVotes":  5,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000004-beef-4abc-8def-000000000004":  {
+                                                 "stillVotes":  6,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000005-beef-4abc-8def-000000000005":  {
+                                                 "stillVotes":  7,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000006-beef-4abc-8def-000000000006":  {
+                                                 "stillVotes":  8,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000007-beef-4abc-8def-000000000007":  {
+                                                 "stillVotes":  9,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000008-beef-4abc-8def-000000000008":  {
+                                                 "stillVotes":  10,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "HIGH"
+                                             },
+    "a0000009-beef-4abc-8def-000000000009":  {
+                                                 "stillVotes":  19,
+                                                 "fixedVotes":  4,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "HIGH"
+                                             },
+    "a000000a-beef-4abc-8def-00000000000a":  {
+                                                 "stillVotes":  20,
+                                                 "fixedVotes":  0,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "CRITICAL"
+                                             },
+    "a000000b-beef-4abc-8def-00000000000b":  {
+                                                 "stillVotes":  21,
+                                                 "fixedVotes":  1,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "LOW"
+                                             },
+    "a000000c-beef-4abc-8def-00000000000c":  {
+                                                 "stillVotes":  17,
+                                                 "fixedVotes":  7,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "LOW"
+                                             },
+    "a000000d-beef-4abc-8def-00000000000d":  {
+                                                 "stillVotes":  18,
+                                                 "fixedVotes":  8,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "LOW"
+                                             },
+    "a000000e-beef-4abc-8def-00000000000e":  {
+                                                 "stillVotes":  19,
+                                                 "fixedVotes":  9,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a000000f-beef-4abc-8def-00000000000f":  {
+                                                 "stillVotes":  5,
+                                                 "fixedVotes":  10,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000010-beef-4abc-8def-000000000010":  {
+                                                 "stillVotes":  6,
+                                                 "fixedVotes":  11,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000011-beef-4abc-8def-000000000011":  {
+                                                 "stillVotes":  5,
+                                                 "fixedVotes":  1,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000012-beef-4abc-8def-000000000012":  {
+                                                 "stillVotes":  0,
+                                                 "fixedVotes":  2,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000013-beef-4abc-8def-000000000013":  {
+                                                 "stillVotes":  1,
+                                                 "fixedVotes":  3,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000014-beef-4abc-8def-000000000014":  {
+                                                 "stillVotes":  0,
+                                                 "fixedVotes":  0,
+                                                 "status":  "UNASSESSED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000015-beef-4abc-8def-000000000015":  {
+                                                 "stillVotes":  9,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000016-beef-4abc-8def-000000000016":  {
+                                                 "stillVotes":  10,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000017-beef-4abc-8def-000000000017":  {
+                                                 "stillVotes":  11,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000018-beef-4abc-8def-000000000018":  {
+                                                 "stillVotes":  12,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000019-beef-4abc-8def-000000000019":  {
+                                                 "stillVotes":  13,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a000001a-beef-4abc-8def-00000000001a":  {
+                                                 "stillVotes":  14,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a000001b-beef-4abc-8def-00000000001b":  {
+                                                 "stillVotes":  15,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a000001c-beef-4abc-8def-00000000001c":  {
+                                                 "stillVotes":  2,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "HIGH"
+                                             },
+    "a000001d-beef-4abc-8def-00000000001d":  {
+                                                 "stillVotes":  19,
+                                                 "fixedVotes":  4,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "HIGH"
+                                             },
+    "a000001e-beef-4abc-8def-00000000001e":  {
+                                                 "stillVotes":  20,
+                                                 "fixedVotes":  0,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "CRITICAL"
+                                             },
+    "a000001f-beef-4abc-8def-00000000001f":  {
+                                                 "stillVotes":  21,
+                                                 "fixedVotes":  1,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000020-beef-4abc-8def-000000000020":  {
+                                                 "stillVotes":  7,
+                                                 "fixedVotes":  7,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000021-beef-4abc-8def-000000000021":  {
+                                                 "stillVotes":  8,
+                                                 "fixedVotes":  8,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000022-beef-4abc-8def-000000000022":  {
+                                                 "stillVotes":  9,
+                                                 "fixedVotes":  9,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000023-beef-4abc-8def-000000000023":  {
+                                                 "stillVotes":  10,
+                                                 "fixedVotes":  10,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000024-beef-4abc-8def-000000000024":  {
+                                                 "stillVotes":  11,
+                                                 "fixedVotes":  11,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000025-beef-4abc-8def-000000000025":  {
+                                                 "stillVotes":  1,
+                                                 "fixedVotes":  5,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000026-beef-4abc-8def-000000000026":  {
+                                                 "stillVotes":  2,
+                                                 "fixedVotes":  6,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000027-beef-4abc-8def-000000000027":  {
+                                                 "stillVotes":  3,
+                                                 "fixedVotes":  7,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000028-beef-4abc-8def-000000000028":  {
+                                                 "stillVotes":  0,
+                                                 "fixedVotes":  0,
+                                                 "status":  "UNASSESSED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000029-beef-4abc-8def-000000000029":  {
+                                                 "stillVotes":  15,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a000002a-beef-4abc-8def-00000000002a":  {
+                                                 "stillVotes":  2,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a000002b-beef-4abc-8def-00000000002b":  {
+                                                 "stillVotes":  3,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a000002c-beef-4abc-8def-00000000002c":  {
+                                                 "stillVotes":  4,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a000002d-beef-4abc-8def-00000000002d":  {
+                                                 "stillVotes":  5,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a000002e-beef-4abc-8def-00000000002e":  {
+                                                 "stillVotes":  6,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a000002f-beef-4abc-8def-00000000002f":  {
+                                                 "stillVotes":  7,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000030-beef-4abc-8def-000000000030":  {
+                                                 "stillVotes":  8,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "HIGH"
+                                             },
+    "a0000031-beef-4abc-8def-000000000031":  {
+                                                 "stillVotes":  19,
+                                                 "fixedVotes":  4,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "HIGH"
+                                             },
+    "a0000032-beef-4abc-8def-000000000032":  {
+                                                 "stillVotes":  20,
+                                                 "fixedVotes":  0,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "CRITICAL"
+                                             },
+    "a0000033-beef-4abc-8def-000000000033":  {
+                                                 "stillVotes":  21,
+                                                 "fixedVotes":  1,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000034-beef-4abc-8def-000000000034":  {
+                                                 "stillVotes":  12,
+                                                 "fixedVotes":  7,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000035-beef-4abc-8def-000000000035":  {
+                                                 "stillVotes":  13,
+                                                 "fixedVotes":  8,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000036-beef-4abc-8def-000000000036":  {
+                                                 "stillVotes":  14,
+                                                 "fixedVotes":  9,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000037-beef-4abc-8def-000000000037":  {
+                                                 "stillVotes":  15,
+                                                 "fixedVotes":  10,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000038-beef-4abc-8def-000000000038":  {
+                                                 "stillVotes":  16,
+                                                 "fixedVotes":  11,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000039-beef-4abc-8def-000000000039":  {
+                                                 "stillVotes":  3,
+                                                 "fixedVotes":  1,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a000003a-beef-4abc-8def-00000000003a":  {
+                                                 "stillVotes":  4,
+                                                 "fixedVotes":  2,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a000003b-beef-4abc-8def-00000000003b":  {
+                                                 "stillVotes":  5,
+                                                 "fixedVotes":  3,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a000003c-beef-4abc-8def-00000000003c":  {
+                                                 "stillVotes":  0,
+                                                 "fixedVotes":  0,
+                                                 "status":  "UNASSESSED",
+                                                 "priority":  "LOW"
+                                             },
+    "a000003d-beef-4abc-8def-00000000003d":  {
+                                                 "stillVotes":  7,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a000003e-beef-4abc-8def-00000000003e":  {
+                                                 "stillVotes":  8,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a000003f-beef-4abc-8def-00000000003f":  {
+                                                 "stillVotes":  9,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000040-beef-4abc-8def-000000000040":  {
+                                                 "stillVotes":  10,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000041-beef-4abc-8def-000000000041":  {
+                                                 "stillVotes":  11,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000042-beef-4abc-8def-000000000042":  {
+                                                 "stillVotes":  12,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000043-beef-4abc-8def-000000000043":  {
+                                                 "stillVotes":  13,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000044-beef-4abc-8def-000000000044":  {
+                                                 "stillVotes":  14,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "HIGH"
+                                             },
+    "a0000045-beef-4abc-8def-000000000045":  {
+                                                 "stillVotes":  19,
+                                                 "fixedVotes":  4,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "HIGH"
+                                             },
+    "a0000046-beef-4abc-8def-000000000046":  {
+                                                 "stillVotes":  20,
+                                                 "fixedVotes":  0,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "CRITICAL"
+                                             },
+    "a0000047-beef-4abc-8def-000000000047":  {
+                                                 "stillVotes":  21,
+                                                 "fixedVotes":  1,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000048-beef-4abc-8def-000000000048":  {
+                                                 "stillVotes":  17,
+                                                 "fixedVotes":  7,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000049-beef-4abc-8def-000000000049":  {
+                                                 "stillVotes":  18,
+                                                 "fixedVotes":  8,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "LOW"
+                                             },
+    "a000004a-beef-4abc-8def-00000000004a":  {
+                                                 "stillVotes":  19,
+                                                 "fixedVotes":  9,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a000004b-beef-4abc-8def-00000000004b":  {
+                                                 "stillVotes":  5,
+                                                 "fixedVotes":  10,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a000004c-beef-4abc-8def-00000000004c":  {
+                                                 "stillVotes":  6,
+                                                 "fixedVotes":  11,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a000004d-beef-4abc-8def-00000000004d":  {
+                                                 "stillVotes":  5,
+                                                 "fixedVotes":  5,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a000004e-beef-4abc-8def-00000000004e":  {
+                                                 "stillVotes":  0,
+                                                 "fixedVotes":  6,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a000004f-beef-4abc-8def-00000000004f":  {
+                                                 "stillVotes":  1,
+                                                 "fixedVotes":  7,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000050-beef-4abc-8def-000000000050":  {
+                                                 "stillVotes":  0,
+                                                 "fixedVotes":  0,
+                                                 "status":  "UNASSESSED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000051-beef-4abc-8def-000000000051":  {
+                                                 "stillVotes":  13,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000052-beef-4abc-8def-000000000052":  {
+                                                 "stillVotes":  14,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000053-beef-4abc-8def-000000000053":  {
+                                                 "stillVotes":  15,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000054-beef-4abc-8def-000000000054":  {
+                                                 "stillVotes":  2,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000055-beef-4abc-8def-000000000055":  {
+                                                 "stillVotes":  3,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000056-beef-4abc-8def-000000000056":  {
+                                                 "stillVotes":  4,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000057-beef-4abc-8def-000000000057":  {
+                                                 "stillVotes":  5,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000058-beef-4abc-8def-000000000058":  {
+                                                 "stillVotes":  6,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "HIGH"
+                                             },
+    "a0000059-beef-4abc-8def-000000000059":  {
+                                                 "stillVotes":  19,
+                                                 "fixedVotes":  4,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "HIGH"
+                                             },
+    "a000005a-beef-4abc-8def-00000000005a":  {
+                                                 "stillVotes":  20,
+                                                 "fixedVotes":  0,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "CRITICAL"
+                                             },
+    "a000005b-beef-4abc-8def-00000000005b":  {
+                                                 "stillVotes":  21,
+                                                 "fixedVotes":  1,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "LOW"
+                                             },
+    "a000005c-beef-4abc-8def-00000000005c":  {
+                                                 "stillVotes":  7,
+                                                 "fixedVotes":  7,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "LOW"
+                                             },
+    "a000005d-beef-4abc-8def-00000000005d":  {
+                                                 "stillVotes":  8,
+                                                 "fixedVotes":  8,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "LOW"
+                                             },
+    "a000005e-beef-4abc-8def-00000000005e":  {
+                                                 "stillVotes":  9,
+                                                 "fixedVotes":  9,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a000005f-beef-4abc-8def-00000000005f":  {
+                                                 "stillVotes":  10,
+                                                 "fixedVotes":  10,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000060-beef-4abc-8def-000000000060":  {
+                                                 "stillVotes":  11,
+                                                 "fixedVotes":  11,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000061-beef-4abc-8def-000000000061":  {
+                                                 "stillVotes":  1,
+                                                 "fixedVotes":  1,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000062-beef-4abc-8def-000000000062":  {
+                                                 "stillVotes":  2,
+                                                 "fixedVotes":  2,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000063-beef-4abc-8def-000000000063":  {
+                                                 "stillVotes":  3,
+                                                 "fixedVotes":  3,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000064-beef-4abc-8def-000000000064":  {
+                                                 "stillVotes":  0,
+                                                 "fixedVotes":  0,
+                                                 "status":  "UNASSESSED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000065-beef-4abc-8def-000000000065":  {
+                                                 "stillVotes":  5,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000066-beef-4abc-8def-000000000066":  {
+                                                 "stillVotes":  6,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000067-beef-4abc-8def-000000000067":  {
+                                                 "stillVotes":  7,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000068-beef-4abc-8def-000000000068":  {
+                                                 "stillVotes":  8,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000069-beef-4abc-8def-000000000069":  {
+                                                 "stillVotes":  9,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a000006a-beef-4abc-8def-00000000006a":  {
+                                                 "stillVotes":  10,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a000006b-beef-4abc-8def-00000000006b":  {
+                                                 "stillVotes":  11,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a000006c-beef-4abc-8def-00000000006c":  {
+                                                 "stillVotes":  12,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "HIGH"
+                                             },
+    "a000006d-beef-4abc-8def-00000000006d":  {
+                                                 "stillVotes":  19,
+                                                 "fixedVotes":  4,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "HIGH"
+                                             },
+    "a000006e-beef-4abc-8def-00000000006e":  {
+                                                 "stillVotes":  20,
+                                                 "fixedVotes":  0,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "CRITICAL"
+                                             },
+    "a000006f-beef-4abc-8def-00000000006f":  {
+                                                 "stillVotes":  21,
+                                                 "fixedVotes":  1,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000070-beef-4abc-8def-000000000070":  {
+                                                 "stillVotes":  12,
+                                                 "fixedVotes":  7,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000071-beef-4abc-8def-000000000071":  {
+                                                 "stillVotes":  13,
+                                                 "fixedVotes":  8,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000072-beef-4abc-8def-000000000072":  {
+                                                 "stillVotes":  14,
+                                                 "fixedVotes":  9,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000073-beef-4abc-8def-000000000073":  {
+                                                 "stillVotes":  15,
+                                                 "fixedVotes":  10,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000074-beef-4abc-8def-000000000074":  {
+                                                 "stillVotes":  16,
+                                                 "fixedVotes":  11,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000075-beef-4abc-8def-000000000075":  {
+                                                 "stillVotes":  3,
+                                                 "fixedVotes":  5,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000076-beef-4abc-8def-000000000076":  {
+                                                 "stillVotes":  4,
+                                                 "fixedVotes":  6,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000077-beef-4abc-8def-000000000077":  {
+                                                 "stillVotes":  5,
+                                                 "fixedVotes":  7,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000078-beef-4abc-8def-000000000078":  {
+                                                 "stillVotes":  0,
+                                                 "fixedVotes":  0,
+                                                 "status":  "UNASSESSED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000079-beef-4abc-8def-000000000079":  {
+                                                 "stillVotes":  11,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a000007a-beef-4abc-8def-00000000007a":  {
+                                                 "stillVotes":  12,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a000007b-beef-4abc-8def-00000000007b":  {
+                                                 "stillVotes":  13,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a000007c-beef-4abc-8def-00000000007c":  {
+                                                 "stillVotes":  14,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a000007d-beef-4abc-8def-00000000007d":  {
+                                                 "stillVotes":  15,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a000007e-beef-4abc-8def-00000000007e":  {
+                                                 "stillVotes":  2,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a000007f-beef-4abc-8def-00000000007f":  {
+                                                 "stillVotes":  3,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000080-beef-4abc-8def-000000000080":  {
+                                                 "stillVotes":  4,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "HIGH"
+                                             },
+    "a0000081-beef-4abc-8def-000000000081":  {
+                                                 "stillVotes":  19,
+                                                 "fixedVotes":  4,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "HIGH"
+                                             },
+    "a0000082-beef-4abc-8def-000000000082":  {
+                                                 "stillVotes":  20,
+                                                 "fixedVotes":  0,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "CRITICAL"
+                                             },
+    "a0000083-beef-4abc-8def-000000000083":  {
+                                                 "stillVotes":  21,
+                                                 "fixedVotes":  1,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000084-beef-4abc-8def-000000000084":  {
+                                                 "stillVotes":  17,
+                                                 "fixedVotes":  7,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000085-beef-4abc-8def-000000000085":  {
+                                                 "stillVotes":  18,
+                                                 "fixedVotes":  8,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000086-beef-4abc-8def-000000000086":  {
+                                                 "stillVotes":  19,
+                                                 "fixedVotes":  9,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000087-beef-4abc-8def-000000000087":  {
+                                                 "stillVotes":  5,
+                                                 "fixedVotes":  10,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000088-beef-4abc-8def-000000000088":  {
+                                                 "stillVotes":  6,
+                                                 "fixedVotes":  11,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000089-beef-4abc-8def-000000000089":  {
+                                                 "stillVotes":  5,
+                                                 "fixedVotes":  1,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a000008a-beef-4abc-8def-00000000008a":  {
+                                                 "stillVotes":  0,
+                                                 "fixedVotes":  2,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a000008b-beef-4abc-8def-00000000008b":  {
+                                                 "stillVotes":  1,
+                                                 "fixedVotes":  3,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a000008c-beef-4abc-8def-00000000008c":  {
+                                                 "stillVotes":  0,
+                                                 "fixedVotes":  0,
+                                                 "status":  "UNASSESSED",
+                                                 "priority":  "LOW"
+                                             },
+    "a000008d-beef-4abc-8def-00000000008d":  {
+                                                 "stillVotes":  3,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a000008e-beef-4abc-8def-00000000008e":  {
+                                                 "stillVotes":  4,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a000008f-beef-4abc-8def-00000000008f":  {
+                                                 "stillVotes":  5,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000090-beef-4abc-8def-000000000090":  {
+                                                 "stillVotes":  6,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000091-beef-4abc-8def-000000000091":  {
+                                                 "stillVotes":  7,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000092-beef-4abc-8def-000000000092":  {
+                                                 "stillVotes":  8,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000093-beef-4abc-8def-000000000093":  {
+                                                 "stillVotes":  9,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a0000094-beef-4abc-8def-000000000094":  {
+                                                 "stillVotes":  10,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "HIGH"
+                                             },
+    "a0000095-beef-4abc-8def-000000000095":  {
+                                                 "stillVotes":  19,
+                                                 "fixedVotes":  4,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "HIGH"
+                                             },
+    "a0000096-beef-4abc-8def-000000000096":  {
+                                                 "stillVotes":  20,
+                                                 "fixedVotes":  0,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "CRITICAL"
+                                             },
+    "a0000097-beef-4abc-8def-000000000097":  {
+                                                 "stillVotes":  21,
+                                                 "fixedVotes":  1,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000098-beef-4abc-8def-000000000098":  {
+                                                 "stillVotes":  7,
+                                                 "fixedVotes":  7,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "LOW"
+                                             },
+    "a0000099-beef-4abc-8def-000000000099":  {
+                                                 "stillVotes":  8,
+                                                 "fixedVotes":  8,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "LOW"
+                                             },
+    "a000009a-beef-4abc-8def-00000000009a":  {
+                                                 "stillVotes":  9,
+                                                 "fixedVotes":  9,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a000009b-beef-4abc-8def-00000000009b":  {
+                                                 "stillVotes":  10,
+                                                 "fixedVotes":  10,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a000009c-beef-4abc-8def-00000000009c":  {
+                                                 "stillVotes":  11,
+                                                 "fixedVotes":  11,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a000009d-beef-4abc-8def-00000000009d":  {
+                                                 "stillVotes":  1,
+                                                 "fixedVotes":  5,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a000009e-beef-4abc-8def-00000000009e":  {
+                                                 "stillVotes":  2,
+                                                 "fixedVotes":  6,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a000009f-beef-4abc-8def-00000000009f":  {
+                                                 "stillVotes":  3,
+                                                 "fixedVotes":  7,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a00000a0-beef-4abc-8def-0000000000a0":  {
+                                                 "stillVotes":  0,
+                                                 "fixedVotes":  0,
+                                                 "status":  "UNASSESSED",
+                                                 "priority":  "LOW"
+                                             },
+    "a00000a1-beef-4abc-8def-0000000000a1":  {
+                                                 "stillVotes":  9,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a00000a2-beef-4abc-8def-0000000000a2":  {
+                                                 "stillVotes":  10,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a00000a3-beef-4abc-8def-0000000000a3":  {
+                                                 "stillVotes":  11,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a00000a4-beef-4abc-8def-0000000000a4":  {
+                                                 "stillVotes":  12,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a00000a5-beef-4abc-8def-0000000000a5":  {
+                                                 "stillVotes":  13,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a00000a6-beef-4abc-8def-0000000000a6":  {
+                                                 "stillVotes":  14,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a00000a7-beef-4abc-8def-0000000000a7":  {
+                                                 "stillVotes":  15,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a00000a8-beef-4abc-8def-0000000000a8":  {
+                                                 "stillVotes":  2,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "HIGH"
+                                             },
+    "a00000a9-beef-4abc-8def-0000000000a9":  {
+                                                 "stillVotes":  19,
+                                                 "fixedVotes":  4,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "HIGH"
+                                             },
+    "a00000aa-beef-4abc-8def-0000000000aa":  {
+                                                 "stillVotes":  20,
+                                                 "fixedVotes":  0,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "CRITICAL"
+                                             },
+    "a00000ab-beef-4abc-8def-0000000000ab":  {
+                                                 "stillVotes":  21,
+                                                 "fixedVotes":  1,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "LOW"
+                                             },
+    "a00000ac-beef-4abc-8def-0000000000ac":  {
+                                                 "stillVotes":  12,
+                                                 "fixedVotes":  7,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "LOW"
+                                             },
+    "a00000ad-beef-4abc-8def-0000000000ad":  {
+                                                 "stillVotes":  13,
+                                                 "fixedVotes":  8,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "LOW"
+                                             },
+    "a00000ae-beef-4abc-8def-0000000000ae":  {
+                                                 "stillVotes":  14,
+                                                 "fixedVotes":  9,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a00000af-beef-4abc-8def-0000000000af":  {
+                                                 "stillVotes":  15,
+                                                 "fixedVotes":  10,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a00000b0-beef-4abc-8def-0000000000b0":  {
+                                                 "stillVotes":  16,
+                                                 "fixedVotes":  11,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a00000b1-beef-4abc-8def-0000000000b1":  {
+                                                 "stillVotes":  3,
+                                                 "fixedVotes":  1,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a00000b2-beef-4abc-8def-0000000000b2":  {
+                                                 "stillVotes":  4,
+                                                 "fixedVotes":  2,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a00000b3-beef-4abc-8def-0000000000b3":  {
+                                                 "stillVotes":  5,
+                                                 "fixedVotes":  3,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a00000b4-beef-4abc-8def-0000000000b4":  {
+                                                 "stillVotes":  0,
+                                                 "fixedVotes":  0,
+                                                 "status":  "UNASSESSED",
+                                                 "priority":  "LOW"
+                                             },
+    "a00000b5-beef-4abc-8def-0000000000b5":  {
+                                                 "stillVotes":  15,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a00000b6-beef-4abc-8def-0000000000b6":  {
+                                                 "stillVotes":  2,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a00000b7-beef-4abc-8def-0000000000b7":  {
+                                                 "stillVotes":  3,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "LOW"
+                                             },
+    "a00000b8-beef-4abc-8def-0000000000b8":  {
+                                                 "stillVotes":  4,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a00000b9-beef-4abc-8def-0000000000b9":  {
+                                                 "stillVotes":  5,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a00000ba-beef-4abc-8def-0000000000ba":  {
+                                                 "stillVotes":  6,
+                                                 "fixedVotes":  0,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a00000bb-beef-4abc-8def-0000000000bb":  {
+                                                 "stillVotes":  7,
+                                                 "fixedVotes":  1,
+                                                 "status":  "PENDING",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a00000bc-beef-4abc-8def-0000000000bc":  {
+                                                 "stillVotes":  8,
+                                                 "fixedVotes":  2,
+                                                 "status":  "PENDING",
+                                                 "priority":  "HIGH"
+                                             },
+    "a00000bd-beef-4abc-8def-0000000000bd":  {
+                                                 "stillVotes":  19,
+                                                 "fixedVotes":  4,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "HIGH"
+                                             },
+    "a00000be-beef-4abc-8def-0000000000be":  {
+                                                 "stillVotes":  20,
+                                                 "fixedVotes":  0,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "CRITICAL"
+                                             },
+    "a00000bf-beef-4abc-8def-0000000000bf":  {
+                                                 "stillVotes":  21,
+                                                 "fixedVotes":  1,
+                                                 "status":  "IN_PROGRESS",
+                                                 "priority":  "LOW"
+                                             },
+    "a00000c0-beef-4abc-8def-0000000000c0":  {
+                                                 "stillVotes":  17,
+                                                 "fixedVotes":  7,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "LOW"
+                                             },
+    "a00000c1-beef-4abc-8def-0000000000c1":  {
+                                                 "stillVotes":  18,
+                                                 "fixedVotes":  8,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "LOW"
+                                             },
+    "a00000c2-beef-4abc-8def-0000000000c2":  {
+                                                 "stillVotes":  19,
+                                                 "fixedVotes":  9,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a00000c3-beef-4abc-8def-0000000000c3":  {
+                                                 "stillVotes":  5,
+                                                 "fixedVotes":  10,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a00000c4-beef-4abc-8def-0000000000c4":  {
+                                                 "stillVotes":  6,
+                                                 "fixedVotes":  11,
+                                                 "status":  "RESOLVED",
+                                                 "priority":  "MEDIUM"
+                                             },
+    "a00000c5-beef-4abc-8def-0000000000c5":  {
+                                                 "stillVotes":  5,
+                                                 "fixedVotes":  5,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a00000c6-beef-4abc-8def-0000000000c6":  {
+                                                 "stillVotes":  0,
+                                                 "fixedVotes":  6,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a00000c7-beef-4abc-8def-0000000000c7":  {
+                                                 "stillVotes":  1,
+                                                 "fixedVotes":  7,
+                                                 "status":  "REJECTED",
+                                                 "priority":  "LOW"
+                                             },
+    "a00000c8-beef-4abc-8def-0000000000c8":  {
+                                                 "stillVotes":  0,
+                                                 "fixedVotes":  0,
+                                                 "status":  "UNASSESSED",
+                                                 "priority":  "LOW"
+                                             }
+}
