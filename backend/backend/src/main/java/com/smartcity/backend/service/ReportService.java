@@ -114,13 +114,9 @@ public class ReportService {
                 .build();
 
         Report saved = reportRepository.save(report);
+        // AI analysis runs in background (@Async) — H3 insertion happens inside
+        // triggerAiAnalysis() once the report is confirmed PENDING, not here.
         triggerAiAnalysis(saved.getReportId());
-        Report updated = reportRepository.findById(saved.getReportId()).orElse(null);
-        if (updated != null  && updated.getStatus()!=ReportStatus.REJECTED &&  updated.getStatus()!=ReportStatus.UNASSESSED  && updated.getStatus()!=ReportStatus.PENDING) {
-            h3ReportService.InsertReportH3(report);
-        }
-        // Fire AI analysis in background — user already has the response
-
 
         return ReportResponse.from(saved);
     }
@@ -439,6 +435,14 @@ public class ReportService {
             // valid=false but confidence ≥ 0.35: stays UNASSESSED — scheduler closes after 48h
 
             reportRepository.save(report);
+
+            // Index in H3 so the report appears on the map — only for PENDING reports.
+            // Must happen here (not in createReport) because triggerAiAnalysis is @Async:
+            // by the time createReport checks the status the AI hasn't finished yet.
+            if (report.getStatus() == ReportStatus.PENDING) {
+                h3ReportService.InsertReportH3(report);
+            }
+
             realtimeDbService.pushReportUpdate(
                     reportId, report.getStillVotes(), report.getFixedVotes(), report.getStatus().name(),
                     report.getPriority() != null ? report.getPriority().name() : null);
